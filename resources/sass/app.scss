@@ -1,0 +1,66 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #ffd700;
+        }
+    }
+
+    button {
+        background-color: #ffd700;
+        color: #333;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #ffcc00;
+        }
+    }
+}
+
+.section-heigth {
+    min-height: 100vh;
+}
+
+.section-content {
+    padding: 50px 0;
+}
+
+.inform-contact {
+    font-size: 1.125rem;
+    color: grey;
+}
