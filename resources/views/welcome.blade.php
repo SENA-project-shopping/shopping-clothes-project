@@ -13,7 +13,7 @@
             <div class="logo">
                 <a href="" class="navbar-brand">
                     <img src="{{ asset('images/logotipo_marca.jpg') }}" alt="logo" width="50" height="35">
-                    Marca
+                    Nombre Marca
                 </a>
             </div>
             <div class="nav-links">
@@ -21,7 +21,9 @@
                 <a href="#quienes-somos">¿Quiénes Somos?</a>
                 <a href="#nuestros-productos">Nuestros Productos</a>
                 <a href="#contactenos">Contáctenos</a>
-                <a href="{{ route('login') }}" id="loginBtn" class="loginBtn">Iniciar Sesión</a>
+                <a href="{{ route('login') }}" id="loginBtn">
+                    <button href="{{ route('login') }}" type="button" class="btn btn-success">Iniciar Sesión</button>
+                </a>
             </div>
         </nav>
     </header>
