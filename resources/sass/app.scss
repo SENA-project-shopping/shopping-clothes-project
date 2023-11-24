@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
+@import "../../node_modules/font-awesome/scss/font-awesome.scss";
 
 // Variables
 @import 'variables';
@@ -64,4 +65,8 @@ header {
 .inform-contact {
     font-size: 1.125rem;
     color: grey;
+}
+
+i {
+    width: 30px !important;
 }

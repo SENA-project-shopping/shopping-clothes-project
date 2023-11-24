@@ -12,7 +12,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $productos = products::paginate(10);
+        return view('admin.productos.index', compact('productos'));
     }
 
     /**
@@ -20,7 +21,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.productos.create');
     }
 
     /**
@@ -36,7 +37,7 @@ class ProductsController extends Controller
      */
     public function show(products $products)
     {
-        //
+        return view('admin.productos.view-producto');
     }
 
     /**
