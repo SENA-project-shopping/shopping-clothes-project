@@ -13,7 +13,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">{{ __('Cantidad:')}}</label>
-                    <input type="text" class="form-control" id="cantidad_producto" name="cantidad_producto">
+                    <input type="text" class="form-control" id="cantidad_producto" name="cantidad_producto" aria-describedby="textHelp" maxlength="5" autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">{{ __('Precio producto:')}}</label>
+                    <input type="text" class="form-control" id="precio_producto" name="precio_producto" aria-describedby="textHelp" maxlength="7" autocomplete="off">
                 </div>
                 <input type="submit" value="{{ __('Guardar producto') }}" class="btn btn-primary">
             </form>

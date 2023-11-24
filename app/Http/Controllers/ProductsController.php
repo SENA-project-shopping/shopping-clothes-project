@@ -33,9 +33,13 @@ class ProductsController extends Controller
      */
     public function store(ProductsRequest $request)
     {
+        $codigoProductoUnico = mt_rand(100, 999999);
+
+        $request->merge(['codigo_producto' => $codigoProductoUnico]);
+
         $producto = Products::create($request->all());
         $producto->save();
-        return redirect()->route('admin.productos.edit', $producto->id)->with('success', 'Producto creado con éxito');
+        return redirect()->route('admin.productos.show', $producto->id)->with('success', 'Producto creado con éxito');
     }
 
     /**

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('codigo_producto')->unique();
             $table->string('nombre_producto');
             $table->string('cantidad_producto');
+            $table->string('precio_producto');
             $table->timestamps();
         });
     }

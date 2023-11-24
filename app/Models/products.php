@@ -11,7 +11,9 @@ class Products extends Model
     protected $_guards = [];
     protected $fillable = [
         'id',
+        'codigo_producto',
         'nombre_producto',
         'cantidad_producto',
+        'precio_producto',
     ];    
 }

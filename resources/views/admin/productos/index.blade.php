@@ -11,6 +11,7 @@
                 <th>Codigo Producto</th>
                 <th>Nombre Producto</th>
                 <th>Cantidad Producto</th>
+                <th>Precio Producto</th>
                 <th>Ver Detalles</th>
                 <th>Editar</th>
               </tr>
@@ -21,6 +22,7 @@
                 <td>{{ $item->codigo_producto }}</td>
                 <td>{{ $item->nombre_producto }}</td>
                 <td>{{ $item->cantidad_producto }}</td>
+                <td>{{ $item->precio_producto }}</td>
                 <td>
                   <a href="{{ route('admin.productos.show', $item->id) }}">
                     <i class="bi bi-eye"></i><i class="fas fa-eye"></i>
