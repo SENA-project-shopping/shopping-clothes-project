@@ -23,7 +23,7 @@
         </div>
         <div class="col">
             <div class="card">
-                <a href="{{ route('admin.categoriaproductos.index') }}" class="btn btn-primary">Ir a la pagina de Categoria Productos</a>
+                {{-- <a href="{{ route('admin.categoriaproductos.index') }}" class="btn btn-primary">Ir a la pagina de Categoria Productos</a> --}}
             </div>
         </div>
     </div>

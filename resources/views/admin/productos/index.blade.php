@@ -8,7 +8,7 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>ID</th>
+                <th>Codigo Producto</th>
                 <th>Nombre Producto</th>
                 <th>Cantidad Producto</th>
                 <th>Ver Detalles</th>
@@ -18,16 +18,16 @@
             <tbody id="productos">
               @forelse ($productos as $item)
               <tr id="AppModelsproducts{{ $item->id }}">
-                <td>{{ $item->id }}</td>
+                <td>{{ $item->codigo_producto }}</td>
                 <td>{{ $item->nombre_producto }}</td>
                 <td>{{ $item->cantidad_producto }}</td>
                 <td>
-                  <a href="{{ route('admin.productos.edit', $item->id) }}">
-                    <i class="fas fa-eye"></i>
+                  <a href="{{ route('admin.productos.show', $item->id) }}">
+                    <i class="bi bi-eye"></i><i class="fas fa-eye"></i>
                   </a>
                 </td>
                 <td>
-                  <a href="">
+                  <a href="{{ route('admin.productos.edit', ['producto' => $item->id]) }}">
                     <i class="fas fa-pencil"></i>
                   </a>
                 </td>

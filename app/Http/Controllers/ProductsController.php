@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductsRequest;
 use App\Models\products;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $productos = products::paginate(10);
+        $productos = Products::paginate(25);
         return view('admin.productos.index', compact('productos'));
     }
 
@@ -26,10 +27,15 @@ class ProductsController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductsRequest $request)
     {
-        //
+        $producto = Products::create($request->all());
+        $producto->save();
+        return redirect()->route('admin.productos.edit', $producto->id)->with('success', 'Producto creado con éxito');
     }
 
     /**
@@ -37,7 +43,7 @@ class ProductsController extends Controller
      */
     public function show(products $products)
     {
-        return view('admin.productos.view-producto');
+        return view('admin.productos.show', compact('products'));
     }
 
     /**
@@ -45,7 +51,7 @@ class ProductsController extends Controller
      */
     public function edit(products $products)
     {
-        //
+        return view('admin.productos.edit', compact('products'));
     }
 
     /**

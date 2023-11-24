@@ -29,22 +29,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/* Rutas Administrador: Productos */
+/* Rutas Administrador */
 
-Route::get('/admin/productos', [App\Http\Controllers\ProductsController::class, 'index'])->name('admin.productos.index');
-Route::get('/admin/productos/crear-producto', [App\Http\Controllers\ProductsController::class, 'create'])->name('admin.productos.create');
-Route::get('/admin/productos/editar-producto', [App\Http\Controllers\ProductsController::class, 'edit'])->name('admin.productos.edit');
-
-/* Rutas Administrador: Usuarios */
-
-Route::get('/admin/usuarios', [App\Http\Controllers\UsersController::class, 'index'])->name('admin.usuarios.index');
-
-/* Rutas Administrador: Clientes */
-
-Route::get('/admin/clientes', [App\Http\Controllers\ClientsController::class, 'index'])->name('admin.clientes.index');
-
-/* Rutas Administrador: Categoria Productos */
-
-Route::get('/admin/categoria-productos', [App\Http\Controllers\ProductCategoryController::class, 'index'])->name('admin.categoriaproductos.index');
-
-/* Rutas Administrador: Ventas */
+Route::name('admin.')->prefix('admin')->group(function() {
+    Route::resources([
+        'productos' => ProductsController::class,
+        'usuarios' => UsersController::class,
+        'clientes' => ClientsController::class,
+        // 'categoria-producto' => ProductCategoryController::class,
+        // 'ventas' => SalesController::class
+    ]);    
+});
