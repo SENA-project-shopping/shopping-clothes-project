@@ -10,6 +10,8 @@ class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
@@ -19,6 +21,8 @@ class ProductsController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -44,30 +48,45 @@ class ProductsController extends Controller
 
     /**
      * Display the specified resource.
+     *
+     * @param  \App\Models\Producto  $producto
+     * @return \Illuminate\Http\Response
      */
-    public function show(products $products)
+    public function show(Products $producto)
     {
-        return view('admin.productos.show', compact('products'));
+        return view('admin.productos.show', compact('producto'));
     }
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Producto  $producto
+     * @return \Illuminate\Http\Response
      */
-    public function edit(products $products)
+    public function edit(Products $producto)
     {
-        return view('admin.productos.edit', compact('products'));
+        return view('admin.productos.edit', compact('producto'));
     }
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Producto  $producto
+     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, products $products)
+    public function update(Request $request, Products $producto)
     {
-        //
+        $producto->update($request->all());
+
+        return redirect()->route('admin.productos.show', $producto->id)->with('success', 'Producto creado con éxito');
     }
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Producto  $producto
+     * @return \Illuminate\Http\Response
      */
     public function destroy(products $products)
     {

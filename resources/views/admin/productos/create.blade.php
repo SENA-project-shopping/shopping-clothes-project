@@ -3,8 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <h1>{{ __('Crear producto') }}</h1>
         <div class="col-md-8">
+            <a href="{{ route('admin.productos.index') }}" class="btn btn-block btn-outline-secondary">
+                <i class="bi bi-house"></i>
+                {{ __('Volver al incio') }}
+            </a>
+            <hr>
+            <h1>{{ __('Crear producto') }}</h1>
             <form action="{{ route('admin.productos.store') }}" method="post">
                 @csrf
                 <div class="mb-3">

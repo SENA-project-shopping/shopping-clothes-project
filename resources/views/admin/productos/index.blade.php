@@ -2,9 +2,14 @@
 
 @section('content')
 <div class="container">
+  <a href="{{ route('home') }}" class="btn btn-block btn-outline-secondary">
+    <i class="bi bi-house"></i>
+    {{ __('Volver al incio') }}
+  </a>
+  <hr>
     <div class="row justify-content-center">
         <h1>{{ __('Productos') }}</h1>
-        <a href="{{ route('admin.productos.create') }}" class="btn btn-success">Crear Producto</a>
+        <a href="{{ route('admin.productos.create') }}" class="btn btn-block btn-success btn-lg mb-3">Crear Producto</a>
         <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -22,22 +27,22 @@
                 <td>{{ $item->codigo_producto }}</td>
                 <td>{{ $item->nombre_producto }}</td>
                 <td>{{ $item->cantidad_producto }}</td>
-                <td>{{ $item->precio_producto }}</td>
+                <td>$ {{ $item->precio_producto }}</td>
                 <td>
                   <a href="{{ route('admin.productos.show', $item->id) }}">
-                    <i class="bi bi-eye"></i><i class="fas fa-eye"></i>
+                    <i class="bi bi-eye"></i>
                   </a>
                 </td>
                 <td>
-                  <a href="{{ route('admin.productos.edit', ['producto' => $item->id]) }}">
-                    <i class="fas fa-pencil"></i>
+                  <a href="{{ route('admin.productos.edit', $item->id) }}">
+                    <i class="bi bi-pencil-square"></i>
                   </a>
                 </td>
               </tr>
               @empty
-                <tr class="px-4 py-2 text-center">
-                  <td colspan="6">No hay productos registrados</td>
-                </tr>
+              <tr class="px-4 py-2 text-center">
+                <td colspan="6">No hay productos registrados</td>
+              </tr>
               @endforelse
             </tbody>
         </table>

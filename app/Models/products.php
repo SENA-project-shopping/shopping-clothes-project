@@ -15,5 +15,7 @@ class Products extends Model
         'nombre_producto',
         'cantidad_producto',
         'precio_producto',
+        'created_at',
+        'updated_at',
     ];    
 }
