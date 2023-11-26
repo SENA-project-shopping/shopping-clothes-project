@@ -48,13 +48,4 @@
         </table>
     </div>
 </div>
-<script>
-  function productoData(item) {
-    window.Echo.private("App.Models.Producto." + item.id)
-    .listen(".ProductoUpdated", (e) => {
-      document.getElementById('AppModelsProducto' + e.model.id + 'id').innerText = e.model.id;
-    });
-    return { data: item }
-  }
-</script>
 @endsection
