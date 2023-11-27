@@ -46,7 +46,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, ut asperiores porro nesciunt eos dolore quod odit possimus, laudantium praesentium est totam aliquid voluptatibus? Dicta voluptatibus quae aliquid sit exercitationem! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus delectus explicabo numquam, inventore itaque, voluptate odit alias quis tempora mollitia recusandae sunt repudiandae corporis aperiam harum voluptatum nostrum cupiditate omnis. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam reprehenderit deleniti eius quibusdam earum labore sunt quas officiis, ipsam velit ipsum necessitatibus! Quo debitis odit cupiditate nam odio dolor iure.</p>
                     </div>
                     <div class="col">
-                        <img src="{{ asset('images/imagen_empresa.jpg') }}" alt="imagen empresa" class="img-fluid">
+                        <img src="{{ asset('images/Img_empresa.jpeg') }}" alt="imagen empresa" class="img-fluid">
                     </div>
                 </div>
             </section>
