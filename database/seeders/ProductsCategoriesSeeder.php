@@ -13,9 +13,6 @@ class ProductsCategoriesSeeder extends Seeder
      */
     public function run(): void
     {
-        // Elimina los registros existentes en la tabla antes de insertar nuevos datos
-        // DB::table('product_categories')->truncate();
-
         $categoriesProduct = [
             'Camisa',
             'Pantalon',

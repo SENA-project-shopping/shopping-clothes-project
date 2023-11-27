@@ -18,7 +18,7 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                {{-- <a href="{{ route('admin.clientes.index') }}" class="btn btn-primary">Ir a la pagina de Clientes</a> --}}
+                {{-- <a href="{{ route('admin.clientes.index') }}" class="btn btn-primary">Ir a la pagina de Ventas</a> --}}
             </div>
         </div>
         <div class="col">
