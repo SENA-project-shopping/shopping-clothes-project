@@ -36,7 +36,6 @@ Route::name('admin.')->prefix('admin')->group(function() {
         'productos' => ProductsController::class,
         'usuarios' => UsersController::class,
         'clientes' => ClientsController::class,
-        // 'categoria-producto' => ProductCategoryController::class,
-        // 'ventas' => SalesController::class
+        'ventas' => SalesController::class,
     ]);    
 });

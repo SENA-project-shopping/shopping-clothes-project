@@ -20,7 +20,7 @@ class Products extends Model
         'updated_at',
     ];
 
-    public function categoriesProducts()
+    public function categoryProduct()
     {
         return $this->belongsTo(ProductCategory::class, 'product_categories_id');
     }

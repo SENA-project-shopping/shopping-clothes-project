@@ -28,7 +28,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        return view('admin.productos.create');
+        $categoryProduct = ProductCategory::all();
+        return view('admin.productos.create', compact('categoryProduct'));
     }
 
     /**
@@ -52,13 +53,13 @@ class ProductsController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Producto  $producto
-     * @param  \App\Models\ProductCategory $categoriesProducts
+     * @param  \App\Models\ProductCategory $categoryProduct
      * @return \Illuminate\Http\Response
      */
     public function show(Products $producto)
     {
-        $categoriesProducts = ProductCategory::all();
-        return view('admin.productos.show', compact('producto', 'categoriesProducts'));
+        $categoryProduct = ProductCategory::all();
+        return view('admin.productos.show', compact('producto', 'categoryProduct'));
     }
 
     /**
@@ -69,7 +70,8 @@ class ProductsController extends Controller
      */
     public function edit(Products $producto)
     {
-        return view('admin.productos.edit', compact('producto'));
+        $categoryProduct = ProductCategory::all();
+        return view('admin.productos.edit', compact('producto', 'categoryProduct'));
     }
 
     /**
@@ -82,7 +84,6 @@ class ProductsController extends Controller
     public function update(Request $request, Products $producto)
     {
         $producto->update($request->all());
-
         return redirect()->route('admin.productos.show', $producto->id)->with('success', 'Producto creado con éxito');
     }
 

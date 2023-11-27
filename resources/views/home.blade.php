@@ -10,7 +10,7 @@
         </div>
         <div class="col">
             <div class="card">
-                <a href="{{ route('admin.usuarios.index') }}" class="btn btn-primary">Ir a la pagina de Usuarios</a>
+                {{-- <a href="{{ route('admin.usuarios.index') }}" class="btn btn-primary">Ir a la pagina de Usuarios</a> --}}
             </div>
         </div>
     </div>
@@ -18,12 +18,12 @@
     <div class="row justify-content-center">
         <div class="col">
             <div class="card">
-                <a href="{{ route('admin.clientes.index') }}" class="btn btn-primary">Ir a la pagina de Clientes</a>
+                {{-- <a href="{{ route('admin.clientes.index') }}" class="btn btn-primary">Ir a la pagina de Clientes</a> --}}
             </div>
         </div>
         <div class="col">
             <div class="card">
-                {{-- <a href="{{ route('admin.categoriaproductos.index') }}" class="btn btn-primary">Ir a la pagina de Categoria Productos</a> --}}
+                <a href="{{ route('admin.clientes.index') }}" class="btn btn-primary">Ir a la pagina de Clientes</a>
             </div>
         </div>
     </div>

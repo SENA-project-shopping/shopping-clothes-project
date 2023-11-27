@@ -40,7 +40,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Categoria producto:') }}</label>
-                            <input type="text" class="form-control" id="product_categories_id" name="product_categories_id" value="{{ $producto->categoriesProducts->descripcion_categoria_producto }}" aria-describedby="textHelp" disabled>
+                            <input type="text" class="form-control" id="product_categories_id" name="product_categories_id" value="{{ $producto->categoryProduct->descripcion_categoria_producto }}" aria-describedby="textHelp" disabled>
                         </div>
                     </div>
                     <div class="col">

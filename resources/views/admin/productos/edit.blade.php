@@ -13,17 +13,68 @@
             <form action="{{ route('admin.productos.update', $producto->id) }}" method="post">
                 @csrf
                 @method('PUT')
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">{{ __('Nombre producto:') }}</label>
-                    <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" aria-describedby="textHelp" maxlength="50" autocomplete="off" value="{{ $producto->nombre_producto }}">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">{{ __('Nombre producto:') }}</label>
+                            <input type="text" class="form-control" id="nombre_producto" name="nombre_producto" aria-describedby="textHelp" maxlength="50" autocomplete="off" value="{{ $producto->nombre_producto }}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Cantidad:')}}</label>
+                            <input type="text" class="form-control" id="cantidad_producto" name="cantidad_producto" aria-describedby="textHelp" maxlength="5" autocomplete="off" value="{{ $producto->cantidad_producto }}">
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">{{ __('Cantidad:')}}</label>
-                    <input type="text" class="form-control" id="cantidad_producto" name="cantidad_producto" aria-describedby="textHelp" maxlength="5" autocomplete="off" value="{{ $producto->cantidad_producto }}">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Precio producto:')}}</label>
+                            <input type="text" class="form-control" id="precio_producto" name="precio_producto" aria-describedby="textHelp" maxlength="7" autocomplete="off" value="{{ $producto->precio_producto }}">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="" class="form-label">{{ __('Categoria producto:') }}</label>
+                            <select name="product_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                @foreach ($categoryProduct as $item)
+                                    <option value="{{ $item->id }}" {{ $item->id == $producto->product_categories_id ? 'selected' : '' }}>
+                                        {{ $item->descripcion_categoria_producto }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">{{ __('Precio producto:')}}</label>
-                    <input type="text" class="form-control" id="precio_producto" name="precio_producto" aria-describedby="textHelp" maxlength="7" autocomplete="off" value="{{ $producto->precio_producto }}">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="" class="form-label">{{ __('Talla:') }}</label>
+                            <select name="" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="" class="form-label">{{ __('Color:') }}</label>
+                            <select name="" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="" class="form-label">{{ __('Genero:') }}</label>
+                            <select name="" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col"></div>
                 </div>
                 <input type="submit" value="{{ __('Editar producto') }}" class="btn btn-primary">
             </form>
