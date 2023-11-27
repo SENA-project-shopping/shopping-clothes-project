@@ -12,8 +12,8 @@
         <nav id="navbar">
             <div class="logo">
                 <a href="" class="navbar-brand">
-                    <img src="{{ asset('images/logotipo_marca.jpg') }}" alt="logo" width="50" height="35">
-                    Nombre Marca
+                    <img src="{{ asset('images/Img_empresa.jpeg') }}" alt="logo" width="50" height="35">
+                    ClonethBlend
                 </a>
             </div>
             <div class="nav-links">
