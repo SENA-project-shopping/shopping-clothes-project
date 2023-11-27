@@ -28,6 +28,9 @@ class Products extends Model
     public function categoryProduct()
     {
         return $this->belongsTo(ProductCategory::class, 'product_categories_id');
+        return $this->belongsTo(TallaCategoria::class, '');
+        return $this->belongsTo(ColorCategoria::class, '');
+        return $this->belongsTo(GeneroCategoria::class, '');
     }
 
     public function broadcastOn($event)

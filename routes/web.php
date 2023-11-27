@@ -33,9 +33,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::name('admin.')->prefix('admin')->group(function() {
     Route::resources([
         'productos' => ProductsController::class,
-        'usuarios' => UsersController::class,
+        // 'usuarios' => UsersController::class,
         'clientes' => ClientsController::class,
-        'ventas' => SalesController::class,
+        // 'ventas' => SalesController::class,
     ]);
 });
 
