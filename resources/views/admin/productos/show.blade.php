@@ -39,13 +39,47 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
-                            <label for="exampleInputPassqord1" class="form-label">{{ __('Fecha de creación:') }}</label>
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Categoria producto:') }}</label>
+                            <input type="text" class="form-control" id="product_categories_id" name="product_categories_id" value="{{ $producto->categoriesProducts->descripcion_categoria_producto }}" aria-describedby="textHelp" disabled>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Talla:') }}</label>
+                            <input type="text" class="form-control" id="" name="" value="" aria-describedby="texhHelp" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Color:') }}</label>
+                            <input type="text" class="form-control" id="" name="" value="" aria-describedby="textHelp" disabled>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Genero:') }}</label>
+                            <input type="text" class="form-control" id="" name="" value="" aria-describedby="textHelp" disabled>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col">    
+                        <h1>{{ __('Datos de control') }}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Fecha de creación:') }}</label>
                             <input type="text" class="form-control" id="created_at" name="created_at" value="{{ $producto->created_at }}" aria-describedby="textHelp" disabled>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
-                            <label for="exampleInputPassqord1" class="form-label">{{ __('Ultima modificación:') }}</label>
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Ultima modificación:') }}</label>
                             <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{ $producto->updated_at }}" aria-describedby="textHelp" disabled>
                         </div>
                     </div>

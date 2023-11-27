@@ -32,6 +32,7 @@ class ProductsSeeder extends Seeder
                 'nombre_producto' => "Producto $i",
                 'cantidad_producto' => rand(1, 100),
                 'precio_producto' => $precioConIva,
+                'product_categories_id' => rand(1, 5),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

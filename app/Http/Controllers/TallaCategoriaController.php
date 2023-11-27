@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\product_category;
-use App\Models\ProductCategory;
+use App\Models\TallaCategoria;
 use Illuminate\Http\Request;
 
-class ProductCategoryController extends Controller
+class TallaCategoriaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +34,7 @@ class ProductCategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ProductCategory $product_category)
+    public function show(TallaCategoria $tallaCategoria)
     {
         //
     }
@@ -43,7 +42,7 @@ class ProductCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ProductCategory $product_category)
+    public function edit(TallaCategoria $tallaCategoria)
     {
         //
     }
@@ -51,7 +50,7 @@ class ProductCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, ProductCategory $product_category)
+    public function update(Request $request, TallaCategoria $tallaCategoria)
     {
         //
     }
@@ -59,7 +58,7 @@ class ProductCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProductCategory $product_category)
+    public function destroy(TallaCategoria $tallaCategoria)
     {
         //
     }

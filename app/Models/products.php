@@ -15,7 +15,13 @@ class Products extends Model
         'nombre_producto',
         'cantidad_producto',
         'precio_producto',
+        'product_categories_id',
         'created_at',
         'updated_at',
-    ];    
+    ];
+
+    public function categoriesProducts()
+    {
+        return $this->belongsTo(ProductCategory::class, 'product_categories_id');
+    }
 }

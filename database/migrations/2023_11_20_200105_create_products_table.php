@@ -17,10 +17,11 @@ return new class extends Migration
             $table->string('nombre_producto');
             $table->string('cantidad_producto');
             $table->string('precio_producto');
-            // $table->unsignedBigInteger('product_categories_id');
-            $table->timestamps();
-
-            // $table->foreign('product_categories_id')->references('id')->on('product_categories')->onDelete('cascade');
+            $table->foreignId('product_categories_id')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->timestamps();                   
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductsRequest;
+use App\Models\ProductCategory;
 use App\Models\products;
 use Illuminate\Http\Request;
 
@@ -15,8 +16,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $productos = Products::paginate(10);
-        return view('admin.productos.index', compact('productos'));
+        $productos = Products::paginate(15);
+        $categoriasProducto = ProductCategory::all();
+        return view('admin.productos.index', compact('productos', 'categoriasProducto'));
     }
 
     /**
@@ -50,11 +52,13 @@ class ProductsController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\ProductCategory $categoriesProducts
      * @return \Illuminate\Http\Response
      */
     public function show(Products $producto)
     {
-        return view('admin.productos.show', compact('producto'));
+        $categoriesProducts = ProductCategory::all();
+        return view('admin.productos.show', compact('producto', 'categoriesProducts'));
     }
 
     /**
