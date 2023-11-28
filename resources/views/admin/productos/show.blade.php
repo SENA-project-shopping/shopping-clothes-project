@@ -46,7 +46,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Talla:') }}</label>
-                            <input type="text" class="form-control" id="" name="" value="" aria-describedby="texhHelp" disabled>
+                            <input type="text" class="form-control" id="talla_categoria_id" name="talla_categoria_id" value="{{ $producto->tallaCategoryProduct->descripcion_talla_categoria }}" aria-describedby="texhHelp" disabled>
                         </div>
                     </div>
                 </div>
@@ -54,14 +54,20 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Color:') }}</label>
-                            <input type="text" class="form-control" id="" name="" value="" aria-describedby="textHelp" disabled>
+                            <input type="text" class="form-control" id="" name="" value="{{ $producto->colorCategoryProduct->descripcion_color_categoria }}" aria-describedby="textHelp" disabled>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Genero:') }}</label>
-                            <input type="text" class="form-control" id="" name="" value="" aria-describedby="textHelp" disabled>
+                            <input type="text" class="form-control" id="" name="" value="{{ $producto->generoCategoryProduct->descripcion_genero_categoria }}" aria-describedby="textHelp" disabled>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="exampleInputPassword1" class="form-label">{{ __('Descripción detalla del producto:') }}</label>
+                        <textarea name="descripcion_detallada" id="descripcion_detallada" class="form-control" rows="5" disabled>{{ $producto->descripcion_detallada }}</textarea>
                     </div>
                 </div>
                 <hr>

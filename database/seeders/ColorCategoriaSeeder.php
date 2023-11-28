@@ -25,7 +25,7 @@ class ColorCategoriaSeeder extends Seeder
         ];
 
         foreach ($coloresCategoria as $item) {
-            DB::table('color_categoria')->insert([
+            DB::table('color_categories')->insert([
                 'descripcion_color_categoria' => $item,
                 'created_at' => now(),
                 'updated_at' => now(),

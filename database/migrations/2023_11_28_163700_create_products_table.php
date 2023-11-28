@@ -18,10 +18,23 @@ return new class extends Migration
             $table->string('cantidad_producto');
             $table->string('precio_producto');
             $table->foreignId('product_categories_id')
-                ->constrained()
+                ->constrained('product_categories')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->timestamps();                   
+            $table->foreignId('talla_categories_id')
+                ->constrained('talla_categories')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('color_categories_id')
+                ->constrained('color_categories')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('genero_categories_id')
+                ->constrained('genero_categories')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->text('descripcion_detallada');
+            $table->timestamps();
         });
     }
 

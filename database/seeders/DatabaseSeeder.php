@@ -9,15 +9,24 @@ class DatabaseSeeder extends Seeder
 {
     /**
      * Seed the application's database.
+     * 
+     * @return void
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
+        /* Seeders Usuarios */
+        $this->call(RolUserSeeder::class);
+        $this->call(StateSeeder::class);
+        $this->call(UsersSeeder::class);
+        
+        /* Seeders Inventario */
+        $this->call(ProductsCategoriesSeeder::class);
+        $this->call(ColorCategoriaSeeder::class);
+        $this->call(TallaCategoriaSeeder::class);
+        $this->call(GeneroCategoriaSeeder::class);
+        $this->call(ProductsSeeder::class);
 
-        \App\Models\User::factory()->create([
-            'name' => 'User Admin',
-            'email' => 'prueba.admin@example.com',
-            'password' => 'prueba1!',
-        ]);
+        /* Seeders Clientes */
+        // $this->call(ClientsSeeder::class);
     }
 }

@@ -13,7 +13,7 @@ class TallaCategoriaSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('talla_categoria')->truncate();
+        // DB::table('talla_categoria')->truncate();
 
         $tallaCategoria = [
             'XS',
@@ -25,7 +25,7 @@ class TallaCategoriaSeeder extends Seeder
         ];
 
         foreach ($tallaCategoria as $item) {
-            DB::table('talla_categoria')->insert([
+            DB::table('talla_categories')->insert([
                 'descripcion_talla_categoria' => $item,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -33,7 +33,7 @@ class TallaCategoriaSeeder extends Seeder
         }
 
         for ($i = 32; $i <= 43; $i++) {
-            DB::table('talla_categoria')->insert([
+            DB::table('talla_categories')->insert([
                 'descripcion_talla_categoria' => (string) $i,
                 'created_at' => now(),
                 'updated_at' => now(),

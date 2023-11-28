@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
+use function Laravel\Prompts\text;
+
 class ProductsSeeder extends Seeder
 {
     /**
@@ -14,7 +16,7 @@ class ProductsSeeder extends Seeder
     public function run(): void
     {
         // Elimina los registros existentes en la tabla antes de insertar nuevos datos
-        DB::table('products')->truncate();
+        // DB::table('products')->truncate();
 
         $faker = Faker::create();
 
@@ -33,6 +35,13 @@ class ProductsSeeder extends Seeder
                 'cantidad_producto' => rand(1, 100),
                 'precio_producto' => $precioConIva,
                 'product_categories_id' => rand(1, 5),
+                'talla_categories_id' => rand(1, 18),
+                'color_categories_id' => rand(1, 8),
+                'genero_categories_id' => rand(1, 3),
+                'descripcion_detallada' => "Descripción del producto detallado",
+                // if ('product_categories_id' == 4) {
+                //     '' => rand(32, 43)
+                // }
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

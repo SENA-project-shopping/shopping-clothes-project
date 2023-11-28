@@ -6,22 +6,21 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class GeneroCategoriaSeeder extends Seeder
+class StateSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $generoCategoria = [
-            'Masculino',
-            'Femenino',
-            'Unisex',
+        $stateUser = [
+            'Activo',
+            'Inactivo',
         ];
 
-        foreach ($generoCategoria as $item) {
-            DB::table('genero_categories')->insert([
-                'descripcion_genero_categoria' => $item,
+        foreach ($stateUser as $item) {
+            DB::table('state')->insert([
+                'descripcion_state' => $item,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

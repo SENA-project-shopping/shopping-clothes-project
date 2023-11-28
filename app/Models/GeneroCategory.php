@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class RolUser extends Model
+class GeneroCategory extends Model
 {
     use HasFactory;
     use BroadcastsEvents;
@@ -15,7 +15,7 @@ class RolUser extends Model
 
     protected $_guards = [];
     protected $fillable = [
-        'descripcion_rol_users',
+        'descripcion_genero_categoria',
     ];
 
     public function broadcastOn($event)

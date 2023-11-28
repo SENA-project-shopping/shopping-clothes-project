@@ -46,6 +46,55 @@
                         </div>
                     </div>                    
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Talla producto:') }}</label>
+                            <select name="talla_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                @foreach ($tallaCategoryProduct as $item)
+                                    <option value="{{ $item->id }}">
+                                        {{ $item->descripcion_talla_categoria }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Color producto:') }}</label>
+                            <select name="color_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                @foreach ($colorCategoryProduct as $item)
+                                    <option value="{{ $item->id }}">
+                                        {{ $item->descripcion_color_categoria }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Genero producto:') }}</label>
+                            <select name="genero_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                @foreach ($generoCategoryProduct as $item)
+                                    <option value="{{ $item->id }}">
+                                        {{ $item->descripcion_genero_categoria }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Descripción detallada del producto:') }}</label>
+                            <textarea name="descripcion_detallada" id="descripcion_detallada" class="form-control" rows="5" maxlength="1000"></textarea>
+                        </div>
+                    </div>
+                </div>
                 <input type="submit" value="{{ __('Guardar producto') }}" class="btn btn-primary">
             </form>
         </div>

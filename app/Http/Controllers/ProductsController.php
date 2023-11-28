@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductsRequest;
+use App\Models\ColorCategory;
+use App\Models\GeneroCategory;
 use App\Models\ProductCategory;
 use App\Models\products;
+use App\Models\TallaCategory;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -18,7 +21,10 @@ class ProductsController extends Controller
     {
         $productos = Products::all();
         $categoryProduct = ProductCategory::all();
-        return view('admin.productos.index', compact('productos', 'categoryProduct'));
+        $tallaCategoryProduct = TallaCategory::all();
+        $colorCategoryProduct = ColorCategory::all();
+        $generoCategoryProduct = GeneroCategory::all();
+        return view('admin.productos.index', compact('productos', 'categoryProduct', 'tallaCategoryProduct', 'colorCategoryProduct', 'generoCategoryProduct'));
     }
 
     /**
@@ -29,7 +35,10 @@ class ProductsController extends Controller
     public function create()
     {
         $categoryProduct = ProductCategory::all();
-        return view('admin.productos.create', compact('categoryProduct'));
+        $tallaCategoryProduct = TallaCategory::all();
+        $colorCategoryProduct = ColorCategory::all();
+        $generoCategoryProduct = GeneroCategory::all();
+        return view('admin.productos.create', compact('categoryProduct', 'tallaCategoryProduct', 'colorCategoryProduct', 'generoCategoryProduct'));
     }
 
     /**
@@ -54,24 +63,37 @@ class ProductsController extends Controller
      *
      * @param  \App\Models\Producto  $producto
      * @param  \App\Models\ProductCategory $categoryProduct
+     * @param  \App\Models\TallaCategory $tallaCategoryProduct
+     * @param  \App\Models\ColorCategory $colorCategoryProduct
+     * @param  \App\Models\GeneroCategory $generoCategoryProduct
      * @return \Illuminate\Http\Response
      */
     public function show(Products $producto)
     {
         $categoryProduct = ProductCategory::all();
-        return view('admin.productos.show', compact('producto', 'categoryProduct'));
+        $tallaCategoryProduct = TallaCategory::all();
+        $colorCategoryProduct = ColorCategory::all();
+        $generoCategoryProduct = GeneroCategory::all();
+        return view('admin.productos.show', compact('producto', 'categoryProduct', 'tallaCategoryProduct', 'colorCategoryProduct', 'generoCategoryProduct'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\ProductCategory $categoryProduct
+     * @param  \App\Models\TallaCategory $tallaCategoryProduct
+     * @param  \App\Models\ColorCategory $colorCategoryProduct
+     * @param  \App\Models\GeneroCategory $generoCategoryProduct
      * @return \Illuminate\Http\Response
      */
     public function edit(Products $producto)
     {
         $categoryProduct = ProductCategory::all();
-        return view('admin.productos.edit', compact('producto', 'categoryProduct'));
+        $tallaCategoryProduct = TallaCategory::all();
+        $colorCategoryProduct = ColorCategory::all();
+        $generoCategoryProduct = GeneroCategory::all();
+        return view('admin.productos.edit', compact('producto', 'categoryProduct', 'tallaCategoryProduct', 'colorCategoryProduct', 'generoCategoryProduct'));
     }
 
     /**
@@ -79,6 +101,10 @@ class ProductsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\ProductCategory $categoryProduct
+     * @param  \App\Models\TallaCategory $tallaCategoryProduct
+     * @param  \App\Models\ColorCategory $colorCategoryProduct
+     * @param  \App\Models\GeneroCategory $generoCategoryProduct
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Products $producto)

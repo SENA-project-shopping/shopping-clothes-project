@@ -36,7 +36,7 @@
                     </div>
                     <div class="col">
                         <div class="mb-3">
-                            <label for="" class="form-label">{{ __('Categoria producto:') }}</label>
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Categoria producto:') }}</label>
                             <select name="product_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
                                 @foreach ($categoryProduct as $item)
                                     <option value="{{ $item->id }}" {{ $item->id == $producto->product_categories_id ? 'selected' : '' }}>
@@ -50,17 +50,25 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
-                            <label for="" class="form-label">{{ __('Talla:') }}</label>
-                            <select name="" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option value=""></option>
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Talla:') }}</label>
+                            <select name="talla_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                @foreach ($tallaCategoryProduct as $item)
+                                    <option value="{{ $item->id }}" {{ $item->id == $producto->talla_categories_id ? 'selected' : '' }}>
+                                        {{ $item->descripcion_talla_categoria }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="col">
                         <div class="mb-3">
-                            <label for="" class="form-label">{{ __('Color:') }}</label>
-                            <select name="" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option value=""></option>
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Color:') }}</label>
+                            <select name="color_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                @foreach ($colorCategoryProduct as $item)
+                                    <option value="{{ $item->id }}" {{ $item->id == $producto->color_categories_id ? 'selected' : '' }}>
+                                        {{ $item->descripcion_color_categoria }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -68,14 +76,24 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">
-                            <label for="" class="form-label">{{ __('Genero:') }}</label>
-                            <select name="" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option value=""></option>
+                            <label for="exampleInputPassword1" class="form-label">{{ __('Genero:') }}</label>
+                            <select name="genero_categories_id" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                @foreach ($generoCategoryProduct as $item)
+                                    <option value="{{ $item->id }}" {{ $item->id == $producto->genero_categories_id ? 'selected' : '' }}>
+                                        {{ $item->descripcion_genero_categoria }}
+                                    </option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
-                    <div class="col"></div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="exampleInputPassword1" class="form-label">{{ __('Descripción detalla del producto:') }}</label>
+                        <textarea name="descripcion_detallada" id="descripcion_detallada" class="form-control" rows="5">{{ $producto->descripcion_detallada }}</textarea>
+                    </div>
+                </div>
+                <br>
                 <input type="submit" value="{{ __('Editar producto') }}" class="btn btn-primary">
             </form>
         </div>

@@ -21,6 +21,10 @@ class Products extends Model
         'cantidad_producto',
         'precio_producto',
         'product_categories_id',
+        'talla_categories_id',
+        'color_categories_id',
+        'genero_categories_id',
+        'descripcion_detallada',
         'created_at',
         'updated_at',
     ];
@@ -28,9 +32,21 @@ class Products extends Model
     public function categoryProduct()
     {
         return $this->belongsTo(ProductCategory::class, 'product_categories_id');
-        return $this->belongsTo(TallaCategoria::class, '');
-        return $this->belongsTo(ColorCategoria::class, '');
-        return $this->belongsTo(GeneroCategoria::class, '');
+    }
+
+    public function tallaCategoryProduct()
+    {
+        return $this->belongsTo(TallaCategory::class, 'talla_categories_id');
+    }
+
+    public function colorCategoryProduct()
+    {
+        return $this->belongsTo(ColorCategory::class, 'color_categories_id');
+    }
+
+    public function generoCategoryProduct()
+    {
+        return $this->belongsTo(GeneroCategory::class, 'genero_categories_id');
     }
 
     public function broadcastOn($event)
