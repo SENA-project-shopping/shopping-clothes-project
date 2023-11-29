@@ -21,7 +21,19 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'rol_users_id',
+        'state_id',
     ];
+
+    public function rolUser()
+    {
+        return $this->belongsTo(RolUser::class, 'rol_users_id');
+    }
+
+    public function stateUser()
+    {
+        return $this->belongsTo(StateUser::class, 'state_id');
+    }
 
     /**
      * The attributes that should be hidden for serialization.

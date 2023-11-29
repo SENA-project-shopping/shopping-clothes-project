@@ -39,8 +39,6 @@
                         <td>{{ $item->categoryProduct->descripcion_categoria_producto }}</td>
                         <td>
                             <a href="{{ route('admin.productos.show', $item->id) }}">
-                                <i class="fa-regular fa-eye"></i>
-                                <i class="fas fa-eye"></i>
                                 <i class="bi bi-eye"></i>
                             </a>
                         </td>

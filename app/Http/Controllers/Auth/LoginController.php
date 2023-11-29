@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -21,6 +22,10 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    const ADMIN_ROLE = 1;
+    const VENDEDOR_ROLE = 2;
+    const BODEGA_ROLE = 3;
+
     /**
      * Where to redirect users after login.
      *
@@ -36,5 +41,24 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        // dd($user->rolUser->id);
+        switch ($user->rolUser->id) {
+            case self::ADMIN_ROLE:
+                return redirect()->intended('home');
+                break;
+            case self::VENDEDOR_ROLE:
+                return redirect()->intended('vendedor/index');
+                break;
+            case self::BODEGA_ROLE:
+                return redirect()->intended('bodega/index');
+                break;
+            default:
+                return redirect('/home');
+                break;
+        }
     }
 }

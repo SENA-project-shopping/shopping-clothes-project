@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ClientsController;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
 
 // use 
@@ -26,6 +26,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::view('/blocked', 'auth.blocked');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 /* Rutas Administrador */
@@ -33,9 +35,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::name('admin.')->prefix('admin')->group(function() {
     Route::resources([
         'productos' => ProductsController::class,
-        // 'usuarios' => UsersController::class,
+        'usuarios' => UserController::class,
+        'ventas' => SalesController::class,
         'clientes' => ClientsController::class,
-        // 'ventas' => SalesController::class,
     ]);
 });
 
@@ -54,5 +56,3 @@ Route::name('almacen.')->prefix('almacen')->group(function() {
         'productos' => ProductsController::class,
     ]);
 });
-
-/* Rutas Cliente */
