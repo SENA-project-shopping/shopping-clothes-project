@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <h1>{{ __('Detalles producto') }}</h1>
-            <form action="{{ route('admin.productos.store') }}" method="post">
+            <form action="{{ route('admin.productos.store') }}" method="get">
                 @csrf
                 @method('GET')
                 <div class="row">
@@ -98,7 +98,6 @@
                     </div>
                 </div>
             </form>
-        
         </div>
     </div>
 </div>

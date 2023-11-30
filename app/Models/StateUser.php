@@ -15,7 +15,7 @@ class StateUser extends Model
 
     protected $_guards = [];
     protected $fillable = [
-        'descripcion_state',
+        'descripcion_state_users',
     ];
 
     public function broadcastOn($event)

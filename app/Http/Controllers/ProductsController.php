@@ -61,7 +61,7 @@ class ProductsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Products $producto
      * @param  \App\Models\ProductCategory $categoryProduct
      * @param  \App\Models\TallaCategory $tallaCategoryProduct
      * @param  \App\Models\ColorCategory $colorCategoryProduct
@@ -80,7 +80,7 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Producto  $producto
+     * @param  \App\Models\Products $producto
      * @param  \App\Models\ProductCategory $categoryProduct
      * @param  \App\Models\TallaCategory $tallaCategoryProduct
      * @param  \App\Models\ColorCategory $colorCategoryProduct
@@ -99,8 +99,8 @@ class ProductsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Producto  $producto
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Models\Products $producto
      * @param  \App\Models\ProductCategory $categoryProduct
      * @param  \App\Models\TallaCategory $tallaCategoryProduct
      * @param  \App\Models\ColorCategory $colorCategoryProduct
@@ -110,7 +110,7 @@ class ProductsController extends Controller
     public function update(Request $request, Products $producto)
     {
         $producto->update($request->all());
-        return redirect()->route('admin.productos.show', $producto->id)->with('success', 'Producto creado con éxito');
+        return redirect()->route('admin.productos.show', $producto->id)->with('success', 'Producto editado con éxito');
     }
 
     /**

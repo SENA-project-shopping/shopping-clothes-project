@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\BroadcastsEvents;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+// use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -17,12 +18,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $_guards = [];
     protected $fillable = [
         'name',
         'email',
         'password',
         'rol_users_id',
-        'state_id',
+        'state_users_id',
     ];
 
     public function rolUser()
@@ -32,7 +34,7 @@ class User extends Authenticatable
 
     public function stateUser()
     {
-        return $this->belongsTo(StateUser::class, 'state_id');
+        return $this->belongsTo(StateUser::class, 'state_users_id');
     }
 
     /**
@@ -54,4 +56,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function broadcastOn($event)
+    {
+        return [$this];
+    }
 }

@@ -22,8 +22,8 @@ return new class extends Migration
                 ->constrained('rol_users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->foreignId('state_id')
-                ->constrained('state')
+            $table->foreignId('state_users_id')
+                ->constrained('state_users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();

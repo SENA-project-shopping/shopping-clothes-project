@@ -19,8 +19,8 @@ class StateSeeder extends Seeder
         ];
 
         foreach ($stateUser as $item) {
-            DB::table('state')->insert([
-                'descripcion_state' => $item,
+            DB::table('state_users')->insert([
+                'descripcion_state_users' => $item,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);

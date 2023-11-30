@@ -32,7 +32,7 @@
                     <td>Cliente prueba</td>
                     <td>2023-11-29 00:00:00</td>
                     <td>
-                        <a href="{{ route('admin.ventas.show'), $item->id }}">
+                        {{-- <a href="{{ route('admin.ventas.show'), $item->id }}"> --}}
                             <i class="bi bi-eye"></i>
                         </a>
                     </td>

@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
             'email' => 'prueba.admin@example.com',
             'password' => 'prueba.admin',
             'rol_users_id' => '1',
-            'state_id' => '1',
+            'state_users_id' => '1',
         ]);
 
         \App\Models\User::factory()->create([
@@ -27,7 +27,7 @@ class UsersSeeder extends Seeder
             'email' => 'prueba.vendedor@example.com',
             'password' => 'prueba.vendedor',
             'rol_users_id' => '2',
-            'state_id' => '1',
+            'state_users_id' => '1',
         ]);
 
         \App\Models\User::factory()->create([
@@ -35,7 +35,7 @@ class UsersSeeder extends Seeder
             'email' => 'prueba.bodega@example.com',
             'password' => 'prueba.bodega',
             'rol_users_id' => '3',
-            'state_id' => '1',
+            'state_users_id' => '1',
         ]);
 
         \App\Models\User::factory()->create([
@@ -43,7 +43,7 @@ class UsersSeeder extends Seeder
             'email' => 'prueba.inhabilitado@example.com',
             'password' => 'prueba.inhabilitado',
             'rol_users_id' => '1',
-            'state_id' => '2',
+            'state_users_id' => '2',
         ]);
     }
 }

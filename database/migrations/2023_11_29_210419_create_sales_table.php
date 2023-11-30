@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('sales', function (Blueprint $table) {
             $table->id();
             $table->string('codigo_venta')->unique();
+            $table->dateTime('fecha_facturacion');
+            $table->string('precio_total');
+            // $table->string('forma_pago_id');
             $table->timestamps();
         });
     }
