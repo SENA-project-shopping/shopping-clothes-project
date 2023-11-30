@@ -9,10 +9,13 @@ class SalesController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('admin.ventas.index');
+        $salesHys = Sales::all();
+        return view('admin.ventas.index', compact('salesHys'));
     }
 
     /**
@@ -33,10 +36,13 @@ class SalesController extends Controller
 
     /**
      * Display the specified resource.
+     * 
+     * @param  \App\Models\Sales $sales
+     * @param  \Illuminate\Http\Response
      */
     public function show(Sales $sales)
     {
-        //
+        return view('admin.ventas.show', compact('sales'));
     }
 
     /**

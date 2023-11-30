@@ -25,25 +25,22 @@
                     <th>Ver Detalles</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td># 18282</td>
-                    <td>Fulano perez</td>
-                    <td>Cliente prueba</td>
-                    <td>2023-11-29 00:00:00</td>
-                    <td>
-                        {{-- <a href="{{ route('admin.ventas.show'), $item->id }}"> --}}
-                            <i class="bi bi-eye"></i>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td># 18283</td>
-                    <td>Fulana perez</td>
-                    <td>Cliente prueba 1</td>
-                    <td>2023-11-29 00:00:01</td>
-                    <td><i class="bi bi-eye"></i></td>
-                </tr>
+            <tbody id="venta">
+                @if (count($salesHys) > 0)
+                    @foreach ($salesHys as $item)
+                        <tr id="AppModelsSales{{ $item->id }}">
+                            <td>{{ $item->codigo_venta }}</td>
+                            <td>Fulano perez</td>
+                            <td>Cliente prueba</td>
+                            <td>{{ $item->fecha_facturacion }}</td>
+                            <td>
+                                <a href="{{ route('admin.ventas.show', $item->id) }}">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
             </tbody>
         </table>
     </div>
