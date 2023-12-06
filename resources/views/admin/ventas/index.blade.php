@@ -5,7 +5,7 @@
     <div class="row justify-content-between align-items-center">
         <div class="col-4">
             <a href="{{ route('home') }}" class="btn btn-block btn-outline-secondary">
-                <i class="bi bi-house"></i>
+                <i class="fa-solid fa-house"></i>
                 {{ __('Volver al incio') }}
             </a>
         </div>
@@ -35,7 +35,7 @@
                             <td>{{ $item->fecha_facturacion }}</td>
                             <td>
                                 <a href="{{ route('admin.ventas.show', $item->id) }}">
-                                    <i class="bi bi-eye"></i>
+                                    <i class="fa-regular fa-eye"></i>
                                 </a>
                             </td>
                         </tr>

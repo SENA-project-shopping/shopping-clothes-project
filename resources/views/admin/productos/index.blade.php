@@ -5,7 +5,7 @@
     <div class="row justify-content-between align-items-center">
         <div class="col-4">
             <a href="{{ route('home') }}" class="btn btn-block btn-outline-secondary">
-                <i class="bi bi-house"></i>
+                <i class="fa-solid fa-house"></i>
                 {{ __('Volver al incio') }}
             </a>
         </div>
@@ -35,16 +35,16 @@
                         <td>{{ $item->codigo_producto }}</td>
                         <td>{{ $item->nombre_producto }}</td>
                         <td>{{ $item->cantidad_producto }}</td>
-                        <td>$ {{ $item->precio_producto }}</td>
+                        <td>$ {{ number_format($item->precio_producto, 2, ',', '.') }}</td>
                         <td>{{ $item->categoryProduct->descripcion_categoria_producto }}</td>
                         <td>
                             <a href="{{ route('admin.productos.show', $item->id) }}">
-                                <i class="bi bi-eye"></i>
+                                <i class="fa-regular fa-eye"></i>
                             </a>
                         </td>
                         <td>
                             <a href="{{ route('admin.productos.edit', $item->id) }}">
-                                <i class="bi bi-pencil-square"></i>
+                                <i class="fa-regular fa-pen-to-square"></i>
                             </a>
                         </td>
                     </tr>

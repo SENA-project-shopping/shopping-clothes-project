@@ -5,8 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <a href="{{ route('admin.productos.index') }}" class="btn btn-block btn-outline-secondary">
-                <i class="bi bi-house"></i>
-                {{ __('Volver al incio') }}
+                <i class="fa-solid fa-arrow-left"></i>
+                {{ __('Volver') }}
             </a>
             <hr>
             <h1>{{ __('Editar producto: #' . $producto->codigo_producto) }}</h1>

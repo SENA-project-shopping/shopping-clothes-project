@@ -51,7 +51,7 @@ Route::name('vendedor.')->prefix('vendedor')->group(function() {
 
 /* Rutas Bodega */
 
-Route::name('almacen.')->prefix('almacen')->group(function() {
+Route::name('bodega.')->prefix('bodega')->group(function() {
     Route::resources([
         'productos' => ProductsController::class,
     ]);

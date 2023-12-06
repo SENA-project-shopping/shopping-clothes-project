@@ -22,10 +22,21 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'document_types_id',
+        'document_user',
+        'pais_nacimiento',
+        'phone',
+        'direccion_residencia',
+        'ciudad_residencia',
         'password',
         'rol_users_id',
         'state_users_id',
     ];
+
+    public function documentTypes() 
+    {
+        return $this->belongsTo(DocumentType::class, 'document_types_id');
+    }
 
     public function rolUser()
     {

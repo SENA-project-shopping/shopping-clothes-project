@@ -18,7 +18,13 @@ class Sales extends Model
         'codigo_venta',
         'fecha_facturacion',
         'precio_total',
+        'forma_pago_id',
     ];
+
+    public function formaPago() 
+    {
+        return $this->belongsTo(FormaPago::class, 'forma_pago_id');
+    }
 
     public function broadcastOn($event)
     {

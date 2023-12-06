@@ -4,6 +4,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <a href="{{ route('admin.productos.index') }}" class="btn btn-block btn-outline-secondary">
+                <i class="fa-solid fa-arrow-left"></i>
+                {{ __('Volver') }}
+            </a>
+            <hr>
             <h1>{{ __('Detalles producto') }}</h1>
             <form action="{{ route('admin.productos.store') }}" method="get">
                 @csrf
@@ -32,7 +37,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Precio producto:')}}</label>
-                            <input type="text" class="form-control" id="precio_producto" name="precio_producto" value="$ {{ $producto->precio_producto }}" aria-describedby="textHelp" disabled>
+                            <input type="text" class="form-control" id="precio_producto" name="precio_producto" value="$ {{ number_format($producto->precio_producto, 2, ',', '.') }}" aria-describedby="textHelp" disabled>
                         </div>
                     </div>
                 </div>
@@ -87,13 +92,6 @@
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Ultima modificación:') }}</label>
                             <input type="text" class="form-control" id="updated_at" name="updated_at" value="{{ $producto->updated_at }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <a href="{{ route('admin.productos.index')}}" class="btn btn-outline-primary">Volver</a>
                         </div>
                     </div>
                 </div>

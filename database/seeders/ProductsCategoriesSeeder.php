@@ -17,8 +17,8 @@ class ProductsCategoriesSeeder extends Seeder
             'Camisa',
             'Pantalon',
             'Chaqueta',
-            'Zapatos',
             'Ropa Interior',
+            'Zapatos',
         ];
 
         foreach ($categoriesProduct as $item) {

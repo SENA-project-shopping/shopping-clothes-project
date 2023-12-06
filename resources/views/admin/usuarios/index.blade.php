@@ -5,7 +5,7 @@
     <div class="row justify-content-between align-items-center">
         <div class="col-4">
             <a href="{{ route('home') }}" class="btn btn-block btn-outline-secondary">
-                <i class="bi bi-house"></i>
+                <i class="fa-solid fa-house"></i>
                 {{ __('Volver al incio') }}
             </a>
         </div>
@@ -21,6 +21,7 @@
                 <tr>
                     <th>Nombre Usuario</th>
                     <th>Correo</th>
+                    <th>Cargo</th>
                     <th>Ver Detalles</th>
                     <th>Editar</th>
                 </tr>
@@ -31,13 +32,14 @@
                         <tr id="AppModelsUser{{ $item->id}}">
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->email }}</td>
+                            <td>{{ $item->rolUser->descripcion_rol_users }}</td>
                             <td>
                                 <a href="{{ route('admin.usuarios.show', $item->id) }}">
-                                    <i class="bi bi-eye"></i>
+                                    <i class="fa-regular fa-eye"></i>
                                 </a>
                             <td>
                                 <a href="{{ route('admin.usuarios.edit', $item->id) }}">
-                                    <i class="bi bi-pencil-square"></i>
+                                    <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
                             </td>
                         </tr>
@@ -59,8 +61,8 @@
         });
     });
 
-    if ($('#productos tr').length === 1) {
-        var colCount = $('#productos tr td').length;
+    if ($('#usuarios tr').length === 1) {
+        var colCount = $('#usuarios tr td').length;
         table.columns().visible(false);
         table.column(0).visible(true);
     }

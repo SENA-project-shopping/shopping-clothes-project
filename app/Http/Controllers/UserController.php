@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
+use App\Models\DocumentType;
 use App\Models\RolUser;
 use App\Models\StateUser;
 use App\Models\User;
@@ -19,9 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $usuarios = User::all();
-        $rolUser = RolUser::all();
-        $stateUser = StateUser::all();
-        return view('admin.usuarios.index', compact('usuarios', 'rolUser', 'stateUser'));
+        return view('admin.usuarios.index', compact('usuarios'));
     }
 
     /**
@@ -33,7 +32,8 @@ class UserController extends Controller
     {
         $rolUser = RolUser::all();
         $stateUser = StateUser::all();
-        return view('admin.usuarios.create', compact('rolUser', 'stateUser'));
+        $documentTypeUser = DocumentType::all();
+        return view('admin.usuarios.create', compact('rolUser', 'stateUser', 'documentTypeUser'));
     }
 
     /**
@@ -60,13 +60,15 @@ class UserController extends Controller
      * @param  \App\Models\User $user
      * @param  \App\Models\RolUser $rolUser
      * @param  \App\Models\StateUser $stateUser
+     * @param  \App\Models\DocumentType $documentTypeUser
      * @return \Illuminate\Http\Response
      */
     public function show(User $usuario)
     {
         $rolUser = RolUser::all();
         $stateUser = StateUser::all();
-        return view('admin.usuarios.show', compact('usuario', 'rolUser', 'stateUser'));
+        $documentTypeUser = DocumentType::all();
+        return view('admin.usuarios.show', compact('usuario', 'rolUser', 'stateUser', 'documentTypeUser'));
     }
 
     /**
@@ -75,13 +77,15 @@ class UserController extends Controller
      * @param  \App\Models\User $user
      * @param  \App\Models\RolUser $rolUser
      * @param  \App\Models\StateUser $stateUser
+     * @param  \App\Models\DocumentType $documentTypeUser
      * @return \Illuminate\Http\Response
      */
     public function edit(User $usuario)
     {
         $rolUser = RolUser::all();
         $stateUser = StateUser::all();
-        return view('admin.usuarios.edit', compact('usuario', 'rolUser', 'stateUser'));
+        $documentTypeUser = DocumentType::all();
+        return view('admin.usuarios.edit', compact('usuario', 'rolUser', 'stateUser', 'documentTypeUser'));
     }
 
     /**
@@ -91,6 +95,7 @@ class UserController extends Controller
      * @param  \App\Models\User $usuario
      * @param  \App\Models\RolUser $rolUser
      * @param  \App\Models\StateUser $stateUser
+     * @param  \App\Models\DocumentType $documentTypeUser
      * @return \Illuminate\Http\Response
      * 
      */

@@ -12,8 +12,6 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
-
         \App\Models\User::factory()->create([
             'name' => 'User Admin',
             'email' => 'prueba.admin@example.com',
@@ -45,5 +43,7 @@ class UsersSeeder extends Seeder
             'rol_users_id' => '1',
             'state_users_id' => '2',
         ]);
+
+        \App\Models\User::factory(10)->create();
     }
 }

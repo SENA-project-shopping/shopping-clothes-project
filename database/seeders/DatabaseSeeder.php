@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         /* Seeders Usuarios */
         $this->call(RolUserSeeder::class);
         $this->call(StateSeeder::class);
+        $this->call(DocumentTypesSeeder::class);
         $this->call(UsersSeeder::class);
         
         /* Seeders Inventario */
@@ -28,5 +29,9 @@ class DatabaseSeeder extends Seeder
 
         /* Seeders Clientes */
         // $this->call(ClientsSeeder::class);
+
+        /* Seeders Ventas */
+        $this->call(FormaPagoSeeder::class);
+        $this->call(SalesSeeder::class);
     }
 }

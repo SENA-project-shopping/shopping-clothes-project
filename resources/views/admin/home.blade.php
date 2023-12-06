@@ -4,8 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col">
+            <a href="{{ route('admin.productos.index') }}" class="btn btn-primary">Ir a la pagina de Productos</a>
+            <a href="{{ route('admin.usuarios.index') }}" class="btn btn-primary">Ir a la pagina de Usuarios</a>
             <div class="card">
                 <a href="{{ route('admin.productos.index') }}" class="btn btn-primary">Ir a la pagina de Productos</a>
+            </div>
+            <div class="card">
+                <a href="{{ route('admin.usuarios.index') }}" class="btn btn-primary">Ir a la pagina de Usuarios</a>
             </div>
         </div>
         <div class="col">
