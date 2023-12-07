@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Products;
 use App\Models\Sales;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\PDF;
 
 class SalesVendedorController extends Controller
 {
@@ -15,7 +15,8 @@ class SalesVendedorController extends Controller
      */
     public function index()
     {
-        return view('vendedor.venta.index');
+        $productos = Products::all();
+        return view('vendedor.ventas.index', compact('productos'));
     }
 
     /**
@@ -68,23 +69,5 @@ class SalesVendedorController extends Controller
     public function destroy(Sales $sales)
     {
         //
-    }
-
-    public function generarPDF($ventaId)
-    {
-        // Obtén la información de la venta, por ejemplo:
-        $venta = Sales::find($ventaId);
-
-        // Carga la vista en una variable
-        $html = view('admin.ventas.show', compact('venta'))->render();
-
-        // Configura el PDF con Dompdf
-        $pdf = PDF::loadHtml($html);
-
-        // Opcional: Personaliza la configuración del PDF
-        $pdf->setOptions(['isHtml5ParserEnabled' => true, 'isPhpEnabled' => true]);
-        
-        // Guarda o descarga el PDF
-        return $pdf->download('detalle_factura.pdf');
     }
 }

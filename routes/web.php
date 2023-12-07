@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductsControllerBodega;
 
 use App\Http\Controllers\SalesVendedorController;
 
+use App\Http\Controllers\CartController;
 // use 
 
 /*
@@ -48,6 +49,10 @@ Route::name('admin.')->prefix('admin')->group(function() {
 /* Rutas Vendedor */
 
 Route::name('vendedor.')->prefix('vendedor')->group(function() {
+    Route::post('cart/add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
+    Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'add'])->name('checkout');
+    Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'add'])->name('clear');
+    Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'add'])->name('removeitem');
     Route::resources([
         'ventas' => SalesVendedorController::class,
     ]);

@@ -27,8 +27,7 @@
             </div>
             <br>
             <div class="card">
-                {{-- <a href="{{ route('vendedor.venta.index') }}" class="btn btn-primary">Ir a la pagina del vendedor vista</a> --}}
-                {{-- <a href="" class="btn btn-primary">Ir a la pagina del vendedor vista</a> --}}
+                <a href="{{ route('vendedor.ventas.index') }}" class="btn btn-primary">Ir a la pagina del vendedor vista</a>
             </div>
             <br>
             <div class="card">
