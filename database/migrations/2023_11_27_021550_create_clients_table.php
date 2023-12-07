@@ -15,7 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('nombre_cliente');
             $table->string('email_cliente');
-            $table->string('password');
+            $table->string('password')->nullable();
+            $table->string('ciudad_residencia');
+            $table->string('direccion_residencia');
+            $table->string('telefono');
             $table->timestamps();
         });
     }

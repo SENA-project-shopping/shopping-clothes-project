@@ -12,7 +12,8 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        return (view('admin.clientes.index'));
+        $clientes = Clients::all();
+        return (view('admin.clientes.index', compact('clientes')));
     }
 
     /**
@@ -33,10 +34,13 @@ class ClientsController extends Controller
 
     /**
      * Display the specified resource.
+     * 
+     * @param  \App\Models\Clients $cliente
+     * @return \Illuminate\Http\Response
      */
-    public function show(Clients $clients)
+    public function show(Clients $cliente)
     {
-        //
+        return view('admin.clientes.show', compact('cliente'));
     }
 
     /**
