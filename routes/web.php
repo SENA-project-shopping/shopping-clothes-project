@@ -7,6 +7,10 @@ use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
 
+use App\Http\Controllers\ProductsControllerBodega;
+
+use App\Http\Controllers\SalesVendedorController;
+
 // use 
 
 /*
@@ -45,7 +49,7 @@ Route::name('admin.')->prefix('admin')->group(function() {
 
 Route::name('vendedor.')->prefix('vendedor')->group(function() {
     Route::resources([
-        'productos' => ProductsController::class,
+        'ventas' => SalesVendedorController::class,
     ]);
 });
 
@@ -53,6 +57,6 @@ Route::name('vendedor.')->prefix('vendedor')->group(function() {
 
 Route::name('bodega.')->prefix('bodega')->group(function() {
     Route::resources([
-        'productos' => ProductsController::class,
+        'productos' => ProductsControllerBodega::class,
     ]);
 });

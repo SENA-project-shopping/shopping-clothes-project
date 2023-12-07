@@ -57,8 +57,8 @@
         });
     });
 
-    if ($('#productos tr').length === 1) {
-        var colCount = $('#productos tr td').length;
+    if ($('#venta tr').length === 1) {
+        var colCount = $('#venta tr td').length;
         table.columns().visible(false);
         table.column(0).visible(true);
     }

@@ -12,6 +12,8 @@ use Nette\Utils\Random;
 
 class UserController extends Controller
 {
+    #region Controlador: Administrador
+    
     /**
      * Display a listing of the resource.
      * 
@@ -112,4 +114,15 @@ class UserController extends Controller
     {
         //
     }
+
+    #endregion Controlador: Administrador
+
+    #region Controlador: Vendedor
+
+    public function indexVendedor()
+    {
+        return view('vendedor.index');
+    }
+
+    #endregion Controlador: Vendedor
 }

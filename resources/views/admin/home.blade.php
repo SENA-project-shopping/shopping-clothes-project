@@ -1,34 +1,37 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container text-center">
+    <div class="row align-items-center">
         <div class="col">
-            <a href="{{ route('admin.productos.index') }}" class="btn btn-primary">Ir a la pagina de Productos</a>
-            <a href="{{ route('admin.usuarios.index') }}" class="btn btn-primary">Ir a la pagina de Usuarios</a>
             <div class="card">
                 <a href="{{ route('admin.productos.index') }}" class="btn btn-primary">Ir a la pagina de Productos</a>
             </div>
+            <br>
             <div class="card">
                 <a href="{{ route('admin.usuarios.index') }}" class="btn btn-primary">Ir a la pagina de Usuarios</a>
             </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <a href="{{ route('admin.usuarios.index') }}" class="btn btn-primary">Ir a la pagina de Usuarios</a>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row justify-content-center">
-        <div class="col">
+            <br>
             <div class="card">
                 <a href="{{ route('admin.ventas.index') }}" class="btn btn-primary">Ir a la pagina de Ventas</a>
             </div>
-        </div>
-        <div class="col">
+            <br>
             <div class="card">
                 <a href="{{ route('admin.clientes.index') }}" class="btn btn-primary">Ir a la pagina de Clientes</a>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="card">
+                <a href="" class="btn btn-primary">Ir a la pagina de bodega vista</a>
+            </div>
+            <br>
+            <div class="card">
+                <a href="" class="btn btn-primary">Ir a la pagina del vendedor vista</a>
+            </div>
+            <br>
+            <div class="card">
+                <a href="" class="btn btn-primary">Ir a la pagina del cliente vista</a>
             </div>
         </div>
     </div>

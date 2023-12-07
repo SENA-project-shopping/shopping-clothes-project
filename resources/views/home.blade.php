@@ -23,14 +23,16 @@
             <hr>
             <br>
             <div class="card">
-                <a href="" class="btn btn-primary">Ir a la pagina de bodega vista</a>
+                <a href="{{ route('bodega.productos.index') }}" class="btn btn-primary">Ir a la pagina de bodega vista</a>
             </div>
             <br>
             <div class="card">
-                <a href="" class="btn btn-primary">Ir a la pagina del vendedor vista</a>
+                {{-- <a href="{{ route('vendedor.venta.index') }}" class="btn btn-primary">Ir a la pagina del vendedor vista</a> --}}
+                {{-- <a href="" class="btn btn-primary">Ir a la pagina del vendedor vista</a> --}}
             </div>
             <br>
             <div class="card">
+                {{-- <a href="{{ route('cliente.index') }}" class="btn btn-primary">Ir a la pagina del cliente vista</a> --}}
                 <a href="" class="btn btn-primary">Ir a la pagina del cliente vista</a>
             </div>
         </div>
