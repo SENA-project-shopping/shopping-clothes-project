@@ -44,5 +44,18 @@
             </div>
         </div>
     </div>
+    <hr>
+    <div class="card">
+        <a href="{{ route('bodega.productos.index') }}" class="btn btn-primary">Ir a la pagina de bodega vista</a>
+    </div>
+    <br>
+    <div class="card">
+        <a href="{{ route('vendedor.ventas.index') }}" class="btn btn-primary">Ir a la pagina del vendedor vista</a>
+    </div>
+    <br>
+    <div class="card">
+        {{-- <a href="{{ route('cliente.index') }}" class="btn btn-primary">Ir a la pagina del cliente vista</a> --}}
+        <a href="" class="btn btn-primary">Ir a la pagina del cliente vista</a>
+    </div>
 </div>
 @endsection
