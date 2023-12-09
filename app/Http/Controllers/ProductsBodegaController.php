@@ -10,7 +10,7 @@ use App\Models\products;
 use App\Models\TallaCategory;
 use Illuminate\Http\Request;
 
-class ProductsControllerBodega extends Controller
+class ProductsBodegaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -78,7 +78,10 @@ class ProductsControllerBodega extends Controller
      */
     public function update(Request $request, Products $producto)
     {
-        $producto->update($request->all());
+        $cantidadActual = $producto->cantidad_producto;
+        $cantidadNueva = $request->input('cantidad_producto');
+        $nuevaCantidadTotal = $cantidadActual + $cantidadNueva;
+        $producto->update(['cantidad_producto' => $nuevaCantidadTotal]);
         return redirect()->route('bodega.productos.show', $producto->id)->with('success', 'Producto editado con éxito');
     }
 }

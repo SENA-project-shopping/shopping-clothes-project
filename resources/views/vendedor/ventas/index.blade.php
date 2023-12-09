@@ -33,9 +33,9 @@
                         <td>{{ $item->nombre_producto }}</td>
                         <td>{{ $item->categoryProduct->descripcion_categoria_producto }}</td>
                         <td>
-                            <form action="{{ route('add') }}" method="POST">
+                            <form action="" method="POST">
                             @csrf
-                                <input type="hidden" name="id" value="{{ $item->id }}">
+                                <input type="hidden" name="product_id" value="{{ $item->id }}">
                                 <input type="submit" name="btn" class=""><i class="fa-solid fa-plus"></i>
                             </form>
                         </td>

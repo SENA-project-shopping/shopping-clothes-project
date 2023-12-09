@@ -7,7 +7,7 @@ use App\Http\Controllers\ClientsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SalesController;
 
-use App\Http\Controllers\ProductsControllerBodega;
+use App\Http\Controllers\ProductsBodegaController;
 
 use App\Http\Controllers\SalesVendedorController;
 
@@ -50,9 +50,9 @@ Route::name('admin.')->prefix('admin')->group(function() {
 
 Route::name('vendedor.')->prefix('vendedor')->group(function() {
     Route::post('cart/add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
-    Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'add'])->name('checkout');
-    Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'add'])->name('clear');
-    Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'add'])->name('removeitem');
+    Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
+    Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
+    Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])->name('removeitem');
     Route::resources([
         'ventas' => SalesVendedorController::class,
     ]);
@@ -62,6 +62,6 @@ Route::name('vendedor.')->prefix('vendedor')->group(function() {
 
 Route::name('bodega.')->prefix('bodega')->group(function() {
     Route::resources([
-        'productos' => ProductsControllerBodega::class,
+        'productos' => ProductsBodegaController::class,
     ]);
 });

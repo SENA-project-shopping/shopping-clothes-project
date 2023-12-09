@@ -17,7 +17,7 @@
                     <div class="col">
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">{{ __('Cantidad:')}}</label>
-                            <input type="text" class="form-control" id="cantidad_producto" name="cantidad_producto" aria-describedby="textHelp" maxlength="5" autocomplete="off" value="{{ $producto->cantidad_producto }}">
+                            <input type="text" class="form-control" id="cantidad_producto" name="cantidad_producto" aria-describedby="textHelp" maxlength="5" autocomplete="off">
                         </div>
                     </div>
                 </div>

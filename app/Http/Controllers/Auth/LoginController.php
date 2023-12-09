@@ -51,10 +51,12 @@ class LoginController extends Controller
                 return redirect()->intended('home');
                 break;
             case self::VENDEDOR_ROLE:
-                return redirect()->intended('vendedor/index');
+                return view('vendedor.ventas.index');
+                // return redirect()->intended('vendedor/ventas/');
                 break;
             case self::BODEGA_ROLE:
-                return redirect()->intended('bodega/index');
+                return view('bodega.productos.index');
+                // return redirect()->intended('bodega/index');
                 break;
             default:
                 return redirect('/home');
