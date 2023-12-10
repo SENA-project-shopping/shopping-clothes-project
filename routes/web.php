@@ -35,7 +35,7 @@ Route::view('/blocked', 'auth.blocked');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/* Rutas Administrador */
+/* Rutas: Rol Administrador */
 
 Route::name('admin.')->prefix('admin')->group(function() {
     Route::resources([
@@ -46,21 +46,30 @@ Route::name('admin.')->prefix('admin')->group(function() {
     ]);
 });
 
-/* Rutas Vendedor */
+/* Rutas: Rol Vendedor */
 
 Route::name('vendedor.')->prefix('vendedor')->group(function() {
-    Route::post('cart/add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
-    Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
-    Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
-    Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])->name('removeitem');
+    // Route::post('cart/add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
+    // Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('checkout');
+    // Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
+    // Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])->name('removeitem');
     Route::resources([
         'ventas' => SalesVendedorController::class,
+        'cart' => CartController::class,
     ]);
 });
 
-/* Rutas Bodega */
+/* Rutas: Rol Bodega */
 
 Route::name('bodega.')->prefix('bodega')->group(function() {
+    Route::resources([
+        'productos' => ProductsBodegaController::class,
+    ]);
+});
+
+/* Rutas: Cliente */
+
+Route::name('cliente.')->prefix('cliente')->group(function() {
     Route::resources([
         'productos' => ProductsBodegaController::class,
     ]);

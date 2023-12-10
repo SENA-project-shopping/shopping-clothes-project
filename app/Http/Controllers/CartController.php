@@ -8,20 +8,34 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function add(Request $requst)
+    public function add(Request $request)
     {
-        $producto = Products::find($requst->id);
-        if (empty($producto))
-            return redirect('/');
+        $producto = Products::find($request->producto_id);
 
         Cart::add(
             $producto->id,
             $producto->nombre_producto,
-            1,
             $producto->precio_producto,
-            $producto->categoryProduct->descripcion_categoria_producto,
+            1,
+            // $producto->categoryProduct->descripcion_categoria_producto,
         );
+        return back()->with('success', '$producto->nombre_producto ¡Agregago al carrito!');
+    }
 
-        return redirect()->back()->with('success', 'Producto agregado' . $producto->nombre_producto);
+    public function cart() {
+        return view('checkout');
+    }
+
+    public function removeitem(Request $request) {
+        Cart::remove([
+            'id' => $request->id,
+        ]);
+
+        return back()->with('success', 'Producto eliminado del carrito');
+    }
+
+    public function clear() {
+        Cart::clear();
+        return back()->with('success', 'Carrito vacio!');
     }
 }

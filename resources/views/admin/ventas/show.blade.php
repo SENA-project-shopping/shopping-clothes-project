@@ -28,7 +28,7 @@
                                 <h4>Factura Electrónica</h4>
                             </div>
                             <div class="col float-right">
-                                <h5 class="text-end">Fecha impresión: {{ $ldate = date('Y-m-d H:i:s'); }} </h5>
+                                <h5 class="text-end">Fecha impresión: {{ $ldate = date('d/m/Y, H:i:s a'); }} </h5>
                             </div>
                             <div class="col-12"></div>
                         <!-- /.col -->
@@ -60,13 +60,10 @@
                             <div class="col-sm-4 invoice-col">
                                 <b>Invoice: </b># {{ $venta->codigo_venta }}<br>
                                 <b>{{ __('Fecha de venta: ') }}</b>{{ $venta->fecha_facturacion }}<br>
-                                <b>Nombre del vendedor:</b> 4F3S8J<br>
-                                <b>Código vendedor:</b> 4F3S8J<br>
                             </div>
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->
-        
                         <!-- Table row -->
                         <div class="row">
                             <div class="col-12 table-responsive">
@@ -120,7 +117,6 @@
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->
-        
                         <div class="row">
                             <!-- accepted payments column -->
                             <div class="col-6">
@@ -149,11 +145,10 @@
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->
-                        
                         <div class="row no-print">
                             <div class="col-12">
-                                <a href="" class="btn btn-success float-right" type="button">
-                                    <i class="bi bi-printer-fill"></i>
+                                <a href="{{ route('admin.ventas.generarPDF') }}" class="btn btn-success float-right" type="button" target="_black">
+                                    <i class="fas fa-print"></i>
                                     Imprimir
                                 </a>
                             </div>

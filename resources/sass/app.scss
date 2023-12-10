@@ -1,13 +1,6 @@
 // Fonts
 @import url('https://fonts.bunny.net/css?family=Nunito');
-
-// @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-// @import "../../node_modules/font-awesome/scss/font-awesome.scss";
-
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
-
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
-
 @import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css");
 @import url("https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css");
 @import url("https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css");
@@ -109,3 +102,185 @@ i {
 .float-right {
     float: right !important;
 }
+
+//
+// Component: Small Box
+//
+
+.icons-home {
+  font-size: 40px !important;
+}
+
+.small-box {
+    @include border-radius($border-radius);
+    // @include box-shadow($card-shadow);
+  
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+  
+    // content wrapper
+    > .inner {
+      padding: 10px;
+    }
+  
+    > .small-box-footer {
+      background-color: rgba($black, .1);
+      color: rgba($white, .8);
+      display: block;
+      padding: 3px 0;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      z-index: 10;
+  
+      &:hover {
+        background-color: rgba($black, .15);
+        color: $white;
+      }
+    }
+  
+    h3 {
+      @include font-size(2.2rem);
+      font-weight: 700;
+      margin: 0 0 10px;
+      padding: 0;
+      white-space: nowrap;
+    }
+  
+    @include media-breakpoint-up(lg) {
+      .col-xl-2 &,
+      .col-lg-2 &,
+      .col-md-2 & {
+        h3 {
+          @include font-size(1.6rem);
+        }
+      }
+  
+      .col-xl-3 &,
+      .col-lg-3 &,
+      .col-md-3 & {
+        h3 {
+          @include font-size(1.6rem);
+        }
+      }
+    }
+  
+    @include media-breakpoint-up(xl) {
+      .col-xl-2 &,
+      .col-lg-2 &,
+      .col-md-2 & {
+        h3 {
+          @include font-size(2.2rem);
+        }
+      }
+  
+      .col-xl-3 &,
+      .col-lg-3 &,
+      .col-md-3 & {
+        h3 {
+          @include font-size(2.2rem);
+        }
+      }
+    }
+  
+    p,
+    h3,
+    a {
+      font-size: 1rem;
+      color: rgb(0, 0, 0);
+  
+      > small {
+        color: $gray-100;
+        display: block;
+        font-size: .9rem;
+        margin-top: 5px;
+      }
+    }
+
+    .info-home {
+      color: white;
+    }
+
+    .footer-info-home {
+      color: black;
+    }
+  
+    h3,
+    p {
+      z-index: 5;
+    }
+  
+    // the icon
+    .icon {
+      color: rgba($black, .15);
+      z-index: 0;
+  
+      > i {
+        font-size: 90px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        // transition: transform $transition-speed linear;
+  
+        &.fa,
+        &.fas,
+        &.far,
+        &.fab,
+        &.fal,
+        &.fad,
+        &.ion {
+          font-size: 70px;
+          top: 20px;
+        }
+      }
+  
+      svg {
+        font-size: 70px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        // transition: transform $transition-speed linear;
+      }
+    }
+  
+    // Small box hover state
+    &:hover {
+      text-decoration: none;
+  
+      // Animate icons on small box hover
+      .icon {
+        > i {
+          &,
+          &.fa,
+          &.fas,
+          &.far,
+          &.fab,
+          &.fal,
+          &.fad,
+          &.ion {
+            transform: scale(1.1);
+          }
+        }
+        > svg {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  
+  @include media-breakpoint-down(sm) {
+    // No need for icons on very small devices
+    .small-box {
+      text-align: center;
+  
+      .icon {
+        display: none;
+      }
+  
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  

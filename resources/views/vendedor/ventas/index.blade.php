@@ -7,10 +7,14 @@
             <h1>{{ __('Productos venta') }}</h1>
         </div>
         <div class="col-4 text-end">
-            <a href="" class="btn btn-block btn-outline-secondary">
-                <i class="fa-solid fa-bag-shopping"></i>
-                {{ __('Ver carrito ventas') }}
-            </a>
+            @if (count(Cart::getContent()))
+                <a href="{{ route('cart.checkout') }}" class="btn btn-block btn-outline-secondary">
+                    <i class="fa-solid fa-bag-shopping">
+                        <span class="badge badge-danger">{{ count(Cart::getContent()) }}</span>
+                    </i>
+                    {{ __('Ver carrito ventas') }}
+                </a>
+            @endif
         </div>
     </div>
     <hr>
@@ -33,10 +37,10 @@
                         <td>{{ $item->nombre_producto }}</td>
                         <td>{{ $item->categoryProduct->descripcion_categoria_producto }}</td>
                         <td>
-                            <form action="" method="POST">
+                            <form action="{{ route('cart.add') }}" method="POST">
                             @csrf
                                 <input type="hidden" name="product_id" value="{{ $item->id }}">
-                                <input type="submit" name="btn" class=""><i class="fa-solid fa-plus"></i>
+                                <input type="submit" name="btn" class="fa-solid fa-plus"><i class="fa-solid fa-plus"></i>
                             </form>
                         </td>
                     </tr>

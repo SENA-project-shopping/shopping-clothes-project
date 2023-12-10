@@ -73,19 +73,8 @@ class SalesController extends Controller
 
     public function generarPDF($ventaId)
     {
-        // Obtén la información de la venta, por ejemplo:
-        $venta = Sales::find($ventaId);
-
-        // Carga la vista en una variable
-        $html = view('admin.ventas.show', compact('venta'))->render();
-
-        // Configura el PDF con Dompdf
-        $pdf = PDF::loadHtml($html);
-
-        // Opcional: Personaliza la configuración del PDF
-        $pdf->setOptions(['isHtml5ParserEnabled' => true, 'isPhpEnabled' => true]);
-        
-        // Guarda o descarga el PDF
-        return $pdf->download('detalle_factura.pdf');
+        $ventasPDF = Sales::all();
+        $pdf = PDF::loadView('admin.ventas.generarPDF', compact('ventasPDF'));
+        return $pdf->stream();
     }
 }
