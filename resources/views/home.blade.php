@@ -121,8 +121,7 @@
     </div>
     <br>
     <div class="card">
-        {{-- <a href="{{ route('clientes.comprar.index') }}" class="btn btn-primary">Ir a la pagina del cliente vista</a> --}}
-        <a href="" class="btn btn-primary">Ir a la pagina del cliente vista</a>
+        <a href="{{ route('cliente.index') }}" class="btn btn-primary">Ir a la pagina del cliente vista</a>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>

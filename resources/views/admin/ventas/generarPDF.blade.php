@@ -157,7 +157,7 @@
                             <!-- /.col -->
                             <div class="col-6">
                                 <p class="lead">Metodo de pago:</p>
-                                <h2 class="text-muted well well-sm shadow-none" style="margin-top: 10px;">{{ $sales->forma_pago_id }}</h2>
+                                {{-- <h2 class="text-muted well well-sm shadow-none" style="margin-top: 10px;">{{ $sales->formaPago->descripcion_forma_pago }}</h2> --}}
                             </div>
                         </div>
                     </div>

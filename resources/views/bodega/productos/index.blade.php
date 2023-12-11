@@ -27,7 +27,7 @@
                 </tr>
             </thead>
             <tbody id="productos">
-                {{-- @if (count($productos) > 0) --}}
+                @if (count($productos) > 0)
                     @foreach ($productos as $item)
                     <tr id="AppModelsProducts{{ $item->id }}">
                         <td>{{ $item->codigo_producto }}</td>
@@ -50,7 +50,8 @@
                     <tr class="px-4 py-2 text-center">
                         <td colspan="7">No hay productos registrados</td>
                     </tr>
-                @endif --}}
+                    --}}
+                @endif 
             </tbody>
         </table>
     </div>

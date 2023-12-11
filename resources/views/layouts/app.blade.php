@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Cloneth Blend Shopping Online') }}</title>
+    <title>{{ config('Cloneth Blend Shopping Online', 'Cloneth Blend Shopping Online') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">

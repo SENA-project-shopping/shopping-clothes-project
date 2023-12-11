@@ -6,7 +6,7 @@ use App\Http\Requests\ProductsRequest;
 use App\Models\ColorCategory;
 use App\Models\GeneroCategory;
 use App\Models\ProductCategory;
-use App\Models\products;
+use App\Models\Products;
 use App\Models\TallaCategory;
 use Illuminate\Http\Request;
 

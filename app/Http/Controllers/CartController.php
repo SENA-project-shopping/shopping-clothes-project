@@ -2,28 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart as ModelsCart;
 use App\Models\Products;
-use Cart;
 use Illuminate\Http\Request;
+use Cart;
 
 class CartController extends Controller
 {
     public function add(Request $request)
     {
-        $producto = Products::find($request->producto_id);
+        $producto = Products::find($request->id);
+        if (empty($productos))
+            return redirect('cliente');
 
         Cart::add(
             $producto->id,
             $producto->nombre_producto,
-            $producto->precio_producto,
             1,
-            // $producto->categoryProduct->descripcion_categoria_producto,
+            $producto->precio_producto,
+            array($producto->categoryProduct->descripcion_categoria_producto),
         );
-        return back()->with('success', '$producto->nombre_producto ¡Agregago al carrito!');
+        return redirect()->back()->with('success', '$producto->nombre_producto ¡Agregago al carrito!');
     }
 
-    public function cart() {
-        return view('checkout');
+    public function checkout() {
+        return view('cliente.checkout');
     }
 
     public function removeitem(Request $request) {
