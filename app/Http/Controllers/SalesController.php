@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sales;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\PDF;
 
 class SalesController extends Controller
 {
@@ -28,14 +28,6 @@ class SalesController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      * 
      * @param  \App\Models\Sales $sales
@@ -43,38 +35,22 @@ class SalesController extends Controller
      */
     public function show(Sales $venta)
     {
-        // dd($venta->toArray());
         return view('admin.ventas.show', compact('venta'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Display the PDF.
+     * 
+     * @param  \App\Models\Sales $sales
+     * @param  \Illuminate\Http\Response
      */
-    public function edit(Sales $sales)
+    public function generarPDF(Sales $sales)
     {
-        //
-    }
+        // $sales = Sales::all();
+        $dateDownload = date('d/m/Y_H:i:s');
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Sales $sales)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Sales $sales)
-    {
-        //
-    }
-
-    public function generarPDF($ventaId)
-    {
-        $ventasPDF = Sales::all();
-        $pdf = PDF::loadView('admin.ventas.generarPDF', compact('ventasPDF'));
+        $pdf = FacadePdf::loadView('admin.ventas.generarPDF', compact('sales'));
         return $pdf->stream();
+        // return $pdf->download('reporte_venta_' . $dateDownload . '.pdf');
     }
 }
