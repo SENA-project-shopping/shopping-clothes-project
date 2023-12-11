@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="row justify-content-center">
             <div class="col">
-                @include('cliente.layout.msg')
+                @include('cliente.partials.msg')
             </div>
             <div class="col ">
                 <a href="{{ route('cliente.checkout') }}" class="btn btn-outline-primary"> 

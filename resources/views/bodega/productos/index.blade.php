@@ -3,12 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-between align-items-center">
-        <div class="col-4">
-            <a href="{{ route('home') }}" class="btn btn-block btn-outline-secondary">
-                <i class="fa-solid fa-house"></i>
-                {{ __('Volver al incio') }}
-            </a>
-        </div>
         <div class="col-4 text-end">
             <h1>{{ __('Productos') }}</h1>
         </div>

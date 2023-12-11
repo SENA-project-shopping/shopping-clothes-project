@@ -101,12 +101,6 @@
                         <div class="bg-gray py-2 px-3 mt-4">
                             <h2>Precio: ${{  number_format($productos->precio_producto, 2, ',', '.') }}</h2>
                         </div>
-                        <div class="mt-4">
-                            <div class="btn btn-primary btn-lg btn-flat">
-                                <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                                Agregar al carrito
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -116,7 +110,7 @@
                         </div>
                     </nav>
                     <div class="tab-content p-3" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> {{ $productos->descripcion_detallada }} </div>
+                        <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab">{{ $productos->descripcion_detallada }}</div>
                     </div>
                 </div>
             </div>

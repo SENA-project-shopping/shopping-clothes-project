@@ -73,4 +73,7 @@ Route::get('/cliente/show/{id}', [App\Http\Controllers\ClientsBuyController::cla
 Route::post('cart/add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
 Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cliente.checkout');
 Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
-Route::post('cart/removeitem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeitem');
+Route::post('cart/removeItem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeItem');
+
+Route::post('cart/increaseQuantity', [App\Http\Controllers\CartController::class, 'increaseQuantity'])->name('increaseQuantity');
+Route::post('cart/decreaseQuantity', [App\Http\Controllers\CartController::class, 'decreaseQuantity'])->name('decreaseQuantity');
