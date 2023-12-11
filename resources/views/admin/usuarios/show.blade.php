@@ -13,73 +13,32 @@
             <form action="{{ route('admin.usuarios.store') }}" method="get">
                 @csrf
                 @method('GET')
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" id="exampleInputEmail1" class="form-label">{{ __('Nombre Usuario:') }}</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ $usuario->name }}" aria-describedby="textHelp" disabled>
+                <div class="col d-flex align-items-stretch flex-column">
+                    <div class="card bg-light d-flex flex-fill">
+                        <div class="card-header text-muted border-bottom-0">
+                            Usuario: {{ $usuario->id }}
                         </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" id="exampleInputEmail1" class="form-label">{{ __('Correo Usuario:') }}</label>
-                            <input type="text" class="form-control" id="email" name="email" value="{{ $usuario->email }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" id="exampleInputEmail1" class="form-label">{{ __('Tipo de documento:') }}</label>
-                            <input type="text" class="form-control" id="document_types_id" name="document_types_id" value="{{ $usuario->documentTypes->descripcion_document_types }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" id="exampleInputEmail1" class="form-label">{{ __('Número de identificación:') }}</label>
-                            <input type="text" class="form-control" id="document_user" name="document_user" value="{{ $usuario->document_user }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="" id="" class="form-label">{{ __('País de nacimiento:') }}</label>
-                            <input type="text" class="form-control" id="" name="" value="{{ $usuario->pais_nacimiento }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="" id="" class="form-label">{{ __('Teléfono:') }}</label>
-                            <input type="text" class="form-control" id="" name="" value="{{ $usuario->phone }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="">{{ __('Dirección de residencia:') }}</label>
-                            <input type="text" class="form-control" id="" name="" value="{{ $usuario->direccion_residencia }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="">{{ __('Ciudad de residencia:') }}</label>
-                            <input type="text" class="form-control" id="" name="" value="{{ $usuario->ciudad_residencia }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" id="exampleInputEmail1" class="form-label">{{ __('Rol Usuario:') }}</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ $usuario->rolUser->descripcion_rol_users }}" aria-describedby="textHelp" disabled>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" id="exampleInputEmail1" class="form-label">{{ __('Nombre Usuario:') }}</label>
-                            <input type="text" class="form-control" id="name" name="name" value="{{ $usuario->stateUser->descripcion_state_users }}" aria-describedby="textHelp" disabled>
+                        <br>
+                        <div class="card-body pt-0">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2 class="lead"><b>{{ $usuario->name }}</b></h2>
+                                    <p class="text-muted text-sm"><b>Cargo: </b> {{ $usuario->rolUser->descripcion_rol_users }} </p>
+                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-envelope"></i></span> Correo: {{ $usuario->email }}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-passport"></i></span> Tipo de documento: {{ $usuario->documentTypes->descripcion_document_types }}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-passport"></i></span> Número de documento: {{ $usuario->document_user }}</li>
+                                        
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-flag"></i></span> País de nacimiento: {{ $usuario->pais_nacimiento }}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Teléfono: {{ $usuario->phone }}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Dirección de residencia: {{ $usuario->direccion_residencia }}</li>
+                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Ciudad de residencia: {{ $usuario->ciudad_residencia }}</li>
+                                    </ul>
+                                </div>
+                                <div class="col-5 text-center">
+                                    <img src="../../images/perfil.png" alt="user-avatar" class="img-circle img-fluid" style="width: 150px;">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
