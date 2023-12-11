@@ -30,13 +30,13 @@
                         <tr class="align-middle">
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->name }}</td>
-                            <td>
+                            <td style="position: relative; display: flex; flex-direction: row; align-content: center; align-items: center;">
                                 <form action="{{ route('decreaseQuantity') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="rowId" value="{{ $item->rowId }}">
                                     <input type="submit" class="btn btn-danger btn-sn" value="-">
                                 </form>
-                                <p>{{ $item->qty }}</p>
+                                <h5>{{ $item->qty }}</h5>
                                 <form action="{{ route('increaseQuantity') }}" method="post">
                                     @csrf
                                     <input type="hidden" name="rowId" value="{{ $item->rowId }}">
