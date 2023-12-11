@@ -60,22 +60,18 @@
                         <h4 class="mt-3">Tamaños disponibles</h4>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-default text-center">
-                                <input type="radio" name="color_option" id="color_option_b1" autocomplete="off">
                                 <span class="text-xl">S</span>
                                 <br>
                             </label>
                             <label class="btn btn-default text-center">
-                                <input type="radio" name="color_option" id="color_option_b2" autocomplete="off">
                                 <span class="text-xl">M</span>
                                 <br>
                             </label>
                             <label class="btn btn-default text-center">
-                                <input type="radio" name="color_option" id="color_option_b3" autocomplete="off">
                                 <span class="text-xl">L</span>
                                 <br>
                             </label>
                             <label class="btn btn-default text-center">
-                                <input type="radio" name="color_option" id="color_option_b4" autocomplete="off">
                                 <span class="text-xl">XL</span>
                                 <br>
                             </label>
@@ -83,17 +79,14 @@
                         <h4 class="mt-3">Estilo</h4>
                         <div class="btn-group btn-group-toggle" data-toggle="buttons">
                             <label class="btn btn-default text-center">
-                                <input type="radio" name="color_option" id="color_option_b1" autocomplete="off">
                                 <span class="text-xl">Femenino</span>
                                 <br>
                             </label>
                             <label class="btn btn-default text-center">
-                                <input type="radio" name="color_option" id="color_option_b2" autocomplete="off">
                                 <span class="text-xl">Masculino</span>
                                 <br>
                             </label>
                             <label class="btn btn-default text-center">
-                                <input type="radio" name="color_option" id="color_option_b3" autocomplete="off">
                                 <span class="text-xl">Unisex</span>
                                 <br>
                             </label>

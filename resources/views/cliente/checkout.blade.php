@@ -68,7 +68,7 @@
                         </tr>
                         <tr class="fw-bolder">
                             <td colspan="3"></td>
-                            <td class="text-end">Subtotal</td>
+                            <td class="text-end">Total</td>
                             <td class="text-end">${{ Cart::total() }}</td>
                         </tr>
                     </tfoot>
