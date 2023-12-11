@@ -73,7 +73,14 @@
                         </tr>
                     </tfoot>
                 </table>
-                <a href="{{ route('clear') }}" class="text-center">Vaciar Carrito</a>
+                <div class="row justify-content-end">
+                    <div class="col">
+                        <a href="{{ route('clear') }}" type="button" class="btn btn-outline-danger text-center">Vaciar Carrito</a>
+                    </div>
+                    <div class="col">
+                        <input type="submit" class="btn btn-outline-success" value="Comprar productos">
+                    </div>
+                </div>
                 @endif
             </div>
         </div>
