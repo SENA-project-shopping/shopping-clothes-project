@@ -4,15 +4,16 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <a href="{{ route('bodega.productos.index') }}" class="btn btn-block btn-outline-secondary">
+            <a href="{{ route('bodega.index') }}" class="btn btn-block btn-outline-secondary">
                 <i class="fa-solid fa-arrow-left"></i>
                 {{ __('Volver') }}
             </a>
             <hr>
             <h1>{{ __('Detalles producto') }}</h1>
-            <form action="{{ route('bodega.productos.store') }}" method="get">
+            <form action="" method="get">
                 @csrf
                 @method('GET')
+                {{-- @dd($producto); --}}
                 <div class="row">
                     <div class="col">
                         <div class="mb-3">

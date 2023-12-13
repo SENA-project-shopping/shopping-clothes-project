@@ -60,11 +60,10 @@ Route::name('vendedor.')->prefix('vendedor')->group(function() {
 
 /* Rutas: Rol Bodega */
 
-Route::name('bodega.')->prefix('bodega')->group(function() {
-    Route::resources([
-        'productos' => ProductsBodegaController::class,
-    ]);
-});
+Route::get('/bodega', [App\Http\Controllers\ProductsBodegaController::class, 'index'])->name('bodega.index');
+Route::get('/bodega/show/{producto}', [App\Http\Controllers\ProductsBodegaController::class, 'show'])->name('bodega.show');
+Route::get('/bodega/edit/{producto}', [App\Http\Controllers\ProductsBodegaController::class, 'edit'])->name('bodega.edit');
+Route::put('/bodega/update/{producto}', [App\Http\Controllers\ProductsBodegaController::class, 'update'])->name('bodega.update');
 
 /* Rutas: Cliente */
 

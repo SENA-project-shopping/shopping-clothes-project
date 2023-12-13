@@ -55,11 +55,8 @@ class LoginController extends Controller
                 // return redirect()->intended('vendedor/ventas/');
                 break;
             case self::BODEGA_ROLE:
-                return view('bodega.productos.index');
-                // return redirect()->intended('bodega/index');
-                break;
-            default:
-                return redirect('/home');
+                // return view('bodega.index');
+                return redirect()->intended('bodega');
                 break;
         }
     }

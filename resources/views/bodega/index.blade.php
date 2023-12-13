@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-between align-items-center">
-        <div class="col-4 text-end">
+        <div class="col-12 text-end">
             <h1>{{ __('Productos') }}</h1>
         </div>
     </div>
@@ -29,22 +29,17 @@
                         <td>{{ $item->cantidad_producto }}</td>
                         <td>{{ $item->categoryProduct->descripcion_categoria_producto }}</td>
                         <td>
-                            <a href="{{ route('bodega.productos.show', $item->id) }}">
+                            <a href="{{ route('bodega.show', $item->id) }}">
                                 <i class="fa-regular fa-eye"></i>
                             </a>
                         </td>
                         <td>
-                            <a href="{{ route('bodega.productos.edit', $item->id) }}">
+                            <a href="{{ route('bodega.edit', $item->id) }}">
                                 <i class="fa-regular fa-pen-to-square"></i>
                             </a>
                         </td>
                     </tr>
                     @endforeach
-                {{-- @else
-                    <tr class="px-4 py-2 text-center">
-                        <td colspan="7">No hay productos registrados</td>
-                    </tr>
-                    --}}
                 @endif 
             </tbody>
         </table>

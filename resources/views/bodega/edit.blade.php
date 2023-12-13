@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <a href="{{ route('bodega.productos.index') }}" class="btn btn-block btn-outline-secondary">
+            <a href="{{ route('bodega.index') }}" class="btn btn-block btn-outline-secondary">
                 <i class="fa-solid fa-arrow-left"></i>
                 {{ __('Volver') }}
             </a>
             <hr>
             <h1>{{ __('Editar producto: #' . $producto->codigo_producto) }}</h1>
-            <form action="{{ route('bodega.productos.update', $producto->id) }}" method="post">
+            <form action="{{ route('bodega.update', $producto->id) }}" method="post">
                 @csrf
                 @method('PUT')
                 <div class="row">
