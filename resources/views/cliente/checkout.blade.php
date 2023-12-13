@@ -73,12 +73,34 @@
                         </tr>
                     </tfoot>
                 </table>
-                <div class="row justify-content-end">
+                <div class="row">
                     <div class="col">
                         <a href="{{ route('clear') }}" type="button" class="btn btn-outline-danger text-center">Vaciar Carrito</a>
                     </div>
-                    <div class="col">
-                        <input type="submit" class="btn btn-outline-success" value="Comprar productos">
+                    <div class="col-2">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Confirmar compra
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmación de compra</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Esta seguro de adquirir los productos?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Comprar productos</button>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 @endif
