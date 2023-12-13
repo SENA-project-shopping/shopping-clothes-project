@@ -8,8 +8,9 @@
             <div class="col">
                 @include('cliente.partials.msg')
             </div>
-            <div class="col ">
-                <a href="{{ route('cliente.index') }}" class="btn btn-outline-primary"> Volver a los productos
+            <div class="col-2">
+                <a href="{{ route('cliente.index') }}" class="btn btn-outline-primary"> 
+                    Volver a los productos
                 </a>
             </div>
             <hr>
