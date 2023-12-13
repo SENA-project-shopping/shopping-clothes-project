@@ -71,6 +71,7 @@ Route::get('/cliente', [App\Http\Controllers\ClientsBuyController::class, 'index
 Route::get('/cliente/show/{id}', [App\Http\Controllers\ClientsBuyController::class, 'show'])->name('cliente.show');
 Route::post('cart/add', [App\Http\Controllers\CartController::class, 'add'])->name('add');
 Route::get('cart/checkout', [App\Http\Controllers\CartController::class, 'checkout'])->name('cliente.checkout');
+Route::get('cart/confirmBuy', [App\Http\Controllers\CartController::class, 'confirmBuy'])->name('confirmBuy');
 Route::get('cart/clear', [App\Http\Controllers\CartController::class, 'clear'])->name('clear');
 Route::post('cart/removeItem', [App\Http\Controllers\CartController::class, 'removeItem'])->name('removeItem');
 

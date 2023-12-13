@@ -85,7 +85,6 @@
                         </button>
                     </div>
                 </div>
-                
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -99,7 +98,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Comprar productos</button>
+                            <a href="{{ route('confirmBuy') }}" type="button" class="btn btn-primary">Comprar productos</a>
                         </div>
                     </div>
                     </div>

@@ -26,16 +26,25 @@ class CartController extends Controller
         return back()->with('success', 'Producto: ' . $productos->nombre_producto . '¡Agregado al carrito!');
     }
 
-    public function checkout() {
+    public function checkout() 
+    {
         return view('cliente.checkout');
     }
 
-    public function removeItem(Request $request) {
+    public function removeItem(Request $request) 
+    {
         Cart::remove($request->rowId);
         return back()->with('success', '¡Producto eliminado del carrito!');
     }
 
-    public function clear() {
+    public function confirmBuy()
+    {
+        Cart::destroy();
+        return back()->with('success', 'Gracias por comprar nuestros productos!. En un momento uno de nuestros asesores empacara tu pedido.');
+    }
+
+    public function clear() 
+    {
         Cart::destroy();
         return back()->with('success', '¡Carrito vacio!');
     }
