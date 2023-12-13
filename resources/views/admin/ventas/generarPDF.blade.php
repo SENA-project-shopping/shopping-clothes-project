@@ -1,8 +1,9 @@
+{{-- @dd($venta); --}}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reporte - Factura N°{{ $sales->codigo_venta }}</title>
+    <title>Reporte - Factura N°{{ $venta->codigo_venta }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" 
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
@@ -72,8 +73,8 @@
                             </div>
                             <!-- /.col -->
                             <div class="col-sm-4 invoice-col">
-                                <b>Número de factura: </b># {{ $sales->codigo_venta }}<br>
-                                <b>{{ __('Fecha de venta: ') }}</b>{{ $sales->fecha_facturacion }}<br>
+                                <b>Número de factura: </b># {{ $venta->codigo_venta }}<br>
+                                <b>{{ __('Fecha de venta: ') }}</b>{{ $venta->fecha_facturacion }}<br>
                             </div>
                             <!-- /.col -->
                         </div>
@@ -149,7 +150,7 @@
                                         </tr>
                                         <tr class="second-table">
                                             <th>Total:</th>
-                                            <td>$ {{ number_format($sales->precio_total, 2, ',', '.') }}</td>
+                                            <td>$ {{ number_format($venta->precio_total, 2, ',', '.') }}</td>
                                         </tr>
                                     </table>
                                 </div>
@@ -157,7 +158,7 @@
                             <!-- /.col -->
                             <div class="col-6">
                                 <p class="lead">Metodo de pago:</p>
-                                {{-- <h2 class="text-muted well well-sm shadow-none" style="margin-top: 10px;">{{ $sales->formaPago->descripcion_forma_pago }}</h2> --}}
+                                <h2 class="text-muted well well-sm shadow-none" style="margin-top: 10px;">{{ $venta->formaPago->descripcion_forma_pago }}</h2>
                             </div>
                         </div>
                     </div>

@@ -40,21 +40,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 /* Rutas: Rol Administrador */
 
 Route::name('admin.')->prefix('admin')->group(function() {
-    Route::get('ventas/generarPDF', [SalesController::class, 'generarPDF'])->name('ventas.generarPDF');
+    Route::get('ventas/generarPDF/{venta}', [SalesController::class, 'generarPDF'])->name('ventas.generarPDF');
     Route::resources([
         'productos' => ProductsController::class,
         'usuarios' => UserController::class,
         'ventas' => SalesController::class,
         'clientes' => ClientsController::class,
-    ]);
-});
-
-/* Rutas: Rol Vendedor */
-
-Route::name('vendedor.')->prefix('vendedor')->group(function() {
-    Route::resources([
-        'ventas' => SalesVendedorController::class,
-        'cart' => CartController::class,
     ]);
 });
 

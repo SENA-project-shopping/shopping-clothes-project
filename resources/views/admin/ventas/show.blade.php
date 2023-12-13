@@ -147,7 +147,7 @@
                         <!-- /.row -->
                         <div class="row no-print">
                             <div class="col-12">
-                                <a href="{{ route('admin.ventas.generarPDF') }}" class="btn btn-success float-right" type="button" target="_black">
+                                <a href="{{ route('admin.ventas.generarPDF', $venta->id) }}" class="btn btn-success float-right" type="button" target="_black">
                                     <i class="fas fa-print"></i>
                                     Imprimir
                                 </a>

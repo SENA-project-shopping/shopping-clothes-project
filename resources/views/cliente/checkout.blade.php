@@ -60,17 +60,17 @@
                         <tr class="fw-bolder">
                             <td colspan="3"></td>
                             <td class="text-end">Subtotal</td>
-                            <td class="text-end">${{ Cart::Subtotal() }}</td>
+                            <td class="text-end">${{ number_format(Cart::Subtotal(), 2, ',', '.') }}</td>
                         </tr>
                         <tr class="fw-bolder">
                             <td colspan="3"></td>
                             <td class="text-end">IVA</td>
-                            <td class="text-end">${{ Cart::tax() }}</td>
+                            <td class="text-end">${{ number_format(Cart::tax(), 2, ',', '.') }}</td>
                         </tr>
                         <tr class="fw-bolder">
                             <td colspan="3"></td>
                             <td class="text-end">Total</td>
-                            <td class="text-end">${{ Cart::total() }}</td>
+                            <td class="text-end">${{ number_format(Cart::total(), 2, ',', '.') }}</td>
                         </tr>
                     </tfoot>
                 </table>

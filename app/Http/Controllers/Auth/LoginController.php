@@ -23,8 +23,7 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     const ADMIN_ROLE = 1;
-    const VENDEDOR_ROLE = 2;
-    const BODEGA_ROLE = 3;
+    const BODEGA_ROLE = 2;
 
     /**
      * Where to redirect users after login.
@@ -49,9 +48,6 @@ class LoginController extends Controller
         switch ($user->rolUser->id) {
             case self::ADMIN_ROLE:
                 return redirect()->intended('home');
-                break;
-            case self::VENDEDOR_ROLE:
-                return redirect()->intended('vendedor');
                 break;
             case self::BODEGA_ROLE:
                 return redirect()->intended('bodega');

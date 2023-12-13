@@ -20,14 +20,6 @@ class SalesController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      * 
      * @param  \App\Models\Sales $sales
@@ -41,16 +33,13 @@ class SalesController extends Controller
     /**
      * Display the PDF.
      * 
-     * @param  \App\Models\Sales $sales
+     * @param  \App\Models\Sales $venta
      * @param  \Illuminate\Http\Response
      */
-    public function generarPDF(Sales $sales)
+    public function generarPDF(Sales $venta)
     {
-        // $sales = Sales::all();
         $dateDownload = date('d/m/Y_H:i:s');
-
-        $pdf = FacadePdf::loadView('admin.ventas.generarPDF', compact('sales'));
+        $pdf = FacadePdf::loadView('admin.ventas.generarPDF', compact('venta'));
         return $pdf->stream();
-        // return $pdf->download('reporte_venta_' . $dateDownload . '.pdf');
     }
 }
