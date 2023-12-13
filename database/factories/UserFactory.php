@@ -34,7 +34,7 @@ class UserFactory extends Factory
             'ciudad_residencia' => fake()->city(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
-            'rol_users_id' => random_int(1, 3),
+            'rol_users_id' => random_int(1, 2),
             'state_users_id' => random_int(1, 2),
         ];
     }

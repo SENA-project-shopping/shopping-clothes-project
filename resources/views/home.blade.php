@@ -75,7 +75,6 @@
             <div class="card card-danger">
                 <div class="card-header">
                   <h3 class="card-title">Pie Chart</h3>
-  
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                       <i class="fas fa-minus"></i>
@@ -112,10 +111,6 @@
         </div>
     </div>
     <hr>
-    <br>
-    <div class="card">
-        <a href="{{ route('vendedor.ventas.index') }}" class="btn btn-primary">Ir a la pagina del vendedor vista</a>
-    </div>
     <br>
     <div class="card">
         <a href="{{ route('cliente.index') }}" class="btn btn-primary">Ir a la pagina del cliente vista</a>

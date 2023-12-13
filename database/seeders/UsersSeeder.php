@@ -21,18 +21,10 @@ class UsersSeeder extends Seeder
         ]);
 
         \App\Models\User::factory()->create([
-            'name' => 'User Venta',
-            'email' => 'prueba.vendedor@example.com',
-            'password' => 'prueba.vendedor',
-            'rol_users_id' => '2',
-            'state_users_id' => '1',
-        ]);
-
-        \App\Models\User::factory()->create([
             'name' => 'User Bodega',
             'email' => 'prueba.bodega@example.com',
             'password' => 'prueba.bodega',
-            'rol_users_id' => '3',
+            'rol_users_id' => '2',
             'state_users_id' => '1',
         ]);
 

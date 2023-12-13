@@ -15,7 +15,6 @@ class RolUserSeeder extends Seeder
     {
         $rolUsers = [
             'Administrador',
-            'Vendedor',
             'Bodega',
         ];
 
