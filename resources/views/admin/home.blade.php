@@ -69,52 +69,6 @@
         </div>
         <!-- ./col -->
     </div>
-    <div class="row">
-        <div class="col">
-            <!-- PIE CHART -->
-            <div class="card card-danger">
-                <div class="card-header">
-                  <h3 class="card-title">Pie Chart</h3>
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                      <i class="fas fa-minus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="card-body">
-                    <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-        </div>
-        <div class="col">
-            <!-- STACKED BAR CHART -->
-            <div class="card card-success">
-                <div class="card-header">
-                  <h3 class="card-title">Stacked Bar Chart</h3>
-  
-                  <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                      <i class="fas fa-minus"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="chart">
-                    <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                  </div>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-        </div>
-    </div>
-    <hr>
-    <br>
-    <div class="card">
-        <a href="{{ route('cliente.index') }}" class="btn btn-primary">Ir a la pagina del cliente vista</a>
-    </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script>

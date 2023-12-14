@@ -21,7 +21,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
+        $usuarios = User::whereIn('rol_users_id', [1, 2])->get();
         return view('admin.usuarios.index', compact('usuarios'));
     }
 
@@ -32,7 +32,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $rolUser = RolUser::all();
+        $rolUser = RolUser::whereIn('id', [1, 2])->get();
         $stateUser = StateUser::all();
         $documentTypeUser = DocumentType::all();
         return view('admin.usuarios.create', compact('rolUser', 'stateUser', 'documentTypeUser'));
@@ -67,7 +67,7 @@ class UserController extends Controller
      */
     public function show(User $usuario)
     {
-        $rolUser = RolUser::all();
+        $rolUser = RolUser::whereIn('id', [1, 2])->get();
         $stateUser = StateUser::all();
         $documentTypeUser = DocumentType::all();
         return view('admin.usuarios.show', compact('usuario', 'rolUser', 'stateUser', 'documentTypeUser'));
@@ -84,7 +84,7 @@ class UserController extends Controller
      */
     public function edit(User $usuario)
     {
-        $rolUser = RolUser::all();
+        $rolUser = RolUser::whereIn('id', [1, 2])->get();
         $stateUser = StateUser::all();
         $documentTypeUser = DocumentType::all();
         return view('admin.usuarios.edit', compact('usuario', 'rolUser', 'stateUser', 'documentTypeUser'));
@@ -116,13 +116,4 @@ class UserController extends Controller
     }
 
     #endregion Controlador: Administrador
-
-    #region Controlador: Vendedor
-
-    public function indexVendedor()
-    {
-        return view('vendedor.index');
-    }
-
-    #endregion Controlador: Vendedor
 }

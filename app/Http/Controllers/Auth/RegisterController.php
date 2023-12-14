@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Clients;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -51,8 +50,8 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nombre_cliente' => ['required', 'string', 'max:255'],
-            'email_cliente' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -61,17 +60,22 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\Clients
+     * @return \App\Models\User
      */
     protected function create(array $data)
     {
-        return Clients::create([
-            'nombre_cliente' => $data['nombre_cliente'],
-            'email_cliente' => $data['email_cliente'],
-            'ciudad_residencia' => $data['ciudad_residencia'],
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'document_types_id' => '1',
+            'document_user' => '15648979',
+            'pais_nacimiento' => 'Colombia',
+            'phone' => $data['phone'],
             'direccion_residencia' => $data['direccion_residencia'],
-            'telefono' => $data['telefono'],
+            'ciudad_residencia' => $data['ciudad_residencia'],
             'password' => Hash::make($data['password']),
+            'rol_users_id' => '3',
+            'state_users_id' => '1',
         ]);
     }
 }

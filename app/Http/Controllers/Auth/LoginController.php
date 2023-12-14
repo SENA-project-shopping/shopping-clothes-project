@@ -24,6 +24,7 @@ class LoginController extends Controller
 
     const ADMIN_ROLE = 1;
     const BODEGA_ROLE = 2;
+    const CLIENT_ROLE = 3;
 
     /**
      * Where to redirect users after login.
@@ -44,19 +45,16 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if ($user)
-        {
-            switch ($user->rolUser->id) {
-                case self::ADMIN_ROLE:
-                    return redirect()->intended('home');
-                    break;
-                case self::BODEGA_ROLE:
-                    return redirect()->intended('bodega');
-                    break;
-            }
-        } else if (!$user)
-        {
-            return redirect()->intended('cliente');
+        switch ($user->rolUser->id) {
+            case self::ADMIN_ROLE:
+                return redirect()->intended('home');
+                break;
+            case self::BODEGA_ROLE:
+                return redirect()->intended('bodega');
+                break;
+            case self::CLIENT_ROLE:
+                return redirect()->intended('cliente');
+                break;
         }
     }
 }

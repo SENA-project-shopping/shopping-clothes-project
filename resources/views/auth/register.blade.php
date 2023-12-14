@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Nombre completo:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="nombre_cliente" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="off" autofocus>
                             </div>
                         </div>
 
@@ -23,7 +23,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo electrónico:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email_cliente" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off">
                             </div>
                         </div>
 
@@ -31,7 +31,7 @@
                             <label for="dir" class="col-md-4 col-form-label text-md-end">{{ __('Ciudad de residencia:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="ciudad_residencia" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="ciudad_residencia" type="text" class="form-control @error('ciudad_residencia') is-invalid @enderror" name="ciudad_residencia" value="{{ old('ciudad_residencia') }}" required autocomplete="off">
                             </div>
                         </div>
 
@@ -39,7 +39,7 @@
                             <label for="dir" class="col-md-4 col-form-label text-md-end">{{ __('Dirección de residencia:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="direccion_residencia" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="direccion_residencia" type="text" class="form-control @error('direccion_residencia') is-invalid @enderror" name="direccion_residencia" value="{{ old('direccion_residencia') }}" required autocomplete="off">
                             </div>
                         </div>
 
@@ -47,7 +47,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Teléfono de contacto:') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="telefono" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('email') }}" required autocomplete="off">
                             </div>
                         </div>
 
