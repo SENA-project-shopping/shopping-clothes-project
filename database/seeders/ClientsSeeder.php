@@ -14,6 +14,15 @@ class ClientsSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\Clients::factory()->create([
+            'nombre_cliente' => 'Cliente prueba',
+            'email_cliente' => 'cliente@example.com',
+            'password' => 'user1!',
+            'ciudad_residencia' => 'Bogotá',
+            'direccion_residencia' => 'Muy lejos',
+            'telefono' => '32156666648',
+        ]);
+
         \App\Models\Clients::factory(10)->create();
     }
 }

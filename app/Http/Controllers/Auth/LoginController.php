@@ -44,14 +44,19 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        // dd($user->rolUser->id);
-        switch ($user->rolUser->id) {
-            case self::ADMIN_ROLE:
-                return redirect()->intended('home');
-                break;
-            case self::BODEGA_ROLE:
-                return redirect()->intended('bodega');
-                break;
+        if ($user)
+        {
+            switch ($user->rolUser->id) {
+                case self::ADMIN_ROLE:
+                    return redirect()->intended('home');
+                    break;
+                case self::BODEGA_ROLE:
+                    return redirect()->intended('bodega');
+                    break;
+            }
+        } else if (!$user)
+        {
+            return redirect()->intended('cliente');
         }
     }
 }
