@@ -16,6 +16,7 @@ class RolUserSeeder extends Seeder
         $rolUsers = [
             'Administrador',
             'Bodega',
+            'Cliente',
         ];
 
         foreach ($rolUsers as $item) {
